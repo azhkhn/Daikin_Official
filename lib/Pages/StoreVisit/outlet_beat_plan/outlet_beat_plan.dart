@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../Constants/global.dart';
 import '../../../Widgets/buidnavbar.dart';
 import '../../../Widgets/outlet_beat_plan_navbar.dart';
 import '../../../Widgets/outlet_recyclerview.dart';
@@ -17,19 +16,9 @@ class _OutletBeatPlanState extends State<OutletBeatPlan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.black,
         title: const Text('Beat Plan By Outlet'),
-        actions: [
-          GestureDetector(
-            onTap: () {
-              FocusScope.of(context).unfocus();
-              listeners.panelitem.setcapture =
-                  listeners.panelitem.setremark = false;
-              Navigator.pop(context);
-            },
-            child: const Icon(Icons.arrow_circle_left_outlined),
-          ),
-        ],
       ),
       drawer: const BuildNavBar(),
       body: const OutLetRecyclerView(),

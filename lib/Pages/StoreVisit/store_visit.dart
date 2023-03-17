@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../Constants/global.dart';
 import '../../Routing/named_routes.dart';
 import '../../Widgets/buidnavbar.dart';
 import 'options.dart';
@@ -26,17 +25,6 @@ class _StoreVisitDataState extends State<StoreVisitData> {
         appBar: AppBar(
           backgroundColor: Colors.black,
           centerTitle: true,
-          actions: [
-            GestureDetector(
-              onTap: () {
-                FocusScope.of(context).unfocus();
-                listeners.panelitem.setcapture =
-                    listeners.panelitem.setremark = false;
-                Navigator.pop(context);
-              },
-              child: const Icon(Icons.arrow_circle_left_outlined),
-            ),
-          ],
           title: const Text("Manage Beat Plan"),
         ),
         drawer: const BuildNavBar(),

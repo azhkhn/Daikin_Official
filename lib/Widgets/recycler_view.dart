@@ -318,7 +318,7 @@ class _RecyclerViewDataState extends State<RecyclerViewData> {
     );
     Widget continueButton = TextButton(
       child: const Text(
-        "Continue",
+        "Add Outlet",
         style: TextStyle(color: Colors.white),
       ),
       onPressed: () {

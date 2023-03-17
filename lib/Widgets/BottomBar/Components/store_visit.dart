@@ -8,9 +8,11 @@ class StoreVisit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+      onPressed: (){
+        Navigator.pop(context);
+        Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => const StoreVisitData(),
-      )),
+      ));},
       child: Column(
         children: const [
           Image(image: AssetImage('assets/visit_drawer.png'),height: 85),

@@ -38,6 +38,7 @@ class _FormFieldsState extends State<FormFields> {
                 const SizedBox(height: 35.0),
                 TextFormField(
                   controller: myusernameController,
+                  keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     icon: const Icon(
                       Icons.account_circle,
