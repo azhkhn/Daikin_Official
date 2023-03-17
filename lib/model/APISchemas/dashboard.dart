@@ -61,12 +61,12 @@ class DashBoard {
 
   factory DashBoard.fromJson(Map<String, dynamic> json) {
     return DashBoard(
-      dealername: loginglobaldata.first.appId=="1"?json['dealerName']:(json.isEmpty)?json['dealerName']:"No Name",
-      dealeraddress: loginglobaldata.first.appId=="1"?json['address']:(json.isEmpty)?json['address']:"No Address",
+      dealername: loginglobaldata.first.appId=="1"?json['dealerName']:(json.isEmpty)?json['dealerName']:"",
+      dealeraddress: loginglobaldata.first.appId=="1"?json['address']:(json.isEmpty)?json['address']:"",
       branchname: (json.isEmpty)?List<String>.from(json['branch']):["Delhi"],
       otp: json['otp'],
-      designation: loginglobaldata.first.appId=="1"?json['designation']:(json.isEmpty)?json['designation']:"No Designation",
-      noticeBoard: (json.isEmpty)?json['noticeBoard']:"No Notice Board",
+      designation: loginglobaldata.first.appId=="1"?json['designation']:(json.isEmpty)?json['designation']:"",
+      noticeBoard: (json.isEmpty)?json['noticeBoard']:"",
       status: (json.isEmpty)?json['status']:"Y"
     );
   }
