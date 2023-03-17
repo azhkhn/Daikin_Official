@@ -8,9 +8,11 @@ class ButtonAttendence extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-    onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+    onPressed: (){
+      Navigator.pop(context);
+      Navigator.of(context).push(MaterialPageRoute(
       builder: (context) => const AttendencePage(),
-    )),
+    ));},
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: const [

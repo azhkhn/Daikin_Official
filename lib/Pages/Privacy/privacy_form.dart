@@ -53,7 +53,7 @@ class _PrivacyFormState extends State<PrivacyForm> {
             controller2.completeError;
           },
           initialUrl:
-              'https://web.multiplier.co.in/policy/privacy-policy-alffts.html',
+              'https://web.multiplier.co.in/policy/privacy-policy-dkffts.html',
           onPageStarted: (url) {
             setState(() {
               loadingPercentage = 0;

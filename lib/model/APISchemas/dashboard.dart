@@ -6,11 +6,11 @@ import '../DatabaseModels/dashboarddata.dart';
 class DashBoard {
 
   final int? id;
-  final String dealername;
-  final String dealeraddress;
+  final String? dealername;
+  final String? dealeraddress;
   final List<String>? branchname;
-  final String designation;
-  final String noticeBoard;
+  final String? designation;
+  final String? noticeBoard;
   final String otp;
   final String? status;
 

@@ -25,7 +25,7 @@ class Options extends StatelessWidget{
           currentFocus.unfocus();
         }
       },
-      child: Card(
+      child: loginglobaldata.first.appId == "1" || loginglobaldata.first.appId == "2"?Card(
         child: Column(
           children: [
             Row(
@@ -33,7 +33,7 @@ class Options extends StatelessWidget{
               children: const <Widget>[
                 ImageCapture(),
                 CustomIconLeave(),
-                CustomIconMarketClose(),
+                // CustomIconMarketClose(),
               ],
             ),
             const SizedBox(height: 16,),
@@ -43,7 +43,50 @@ class Options extends StatelessWidget{
                 // CustomIconTraining(),
                 customicontraining(context),
                 const CustomIconWeekOff(),
-                const CustomIconHoliday(),
+                // const CustomIconHoliday(),
+              ],
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const <Widget>[
+                // CustomIconOnDuty()
+              ],
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Visibility(
+              visible: listeners.panelitem.getcapture,
+              child: const SelectImage(),
+            ),
+            Visibility(
+              visible: listeners.panelitem.getremark,
+              child: const RemarkBox(),
+            )
+          ],
+        ),
+      ):loginglobaldata.first.appId=="3" || loginglobaldata.first.appId == "4" || loginglobaldata.first.appId == "5"?Card(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const <Widget>[
+                ImageCapture(),
+                CustomIconLeave(),
+                // CustomIconMarketClose(),
+              ],
+            ),
+            const SizedBox(height: 16,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                // CustomIconTraining(),
+                customicontraining(context),
+                const CustomIconWeekOff(),
+                // const CustomIconHoliday(),
               ],
             ),
             const SizedBox(
@@ -68,7 +111,7 @@ class Options extends StatelessWidget{
             )
           ],
         ),
-      ),
+      ):null
     );
   }
 }

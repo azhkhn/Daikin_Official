@@ -37,13 +37,6 @@ class DestinationLocationTransition extends StatelessWidget {
               if (snapshot.hasError) {
                 loc = null;
                 return const TrainTransition();
-                // return FutureBuilder(
-                //     future: _startnav2(context),
-                //     builder: (BuildContext context, AsyncSnapshot snapshot2) {
-                //       return const Center(
-                //         child: ServerError(),
-                //       );
-                //     });
               }
               return const LogginIN(value: "Setting Up");
             case ConnectionState.waiting:

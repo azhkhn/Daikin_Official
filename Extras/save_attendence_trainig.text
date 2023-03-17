@@ -74,7 +74,7 @@
 
 //     var response = await http.post(
 //       Uri.parse(
-//           'https://web.multiplier.co.in/ALFFTS/alfftssr_saveAttendance.action'),
+//           'https://web.multiplier.co.in/dkffts/dkfftssr_saveAttendance.action'),
 //       body: {
 //         'empId': notes![0].loginId,
 //         'appId': notes![0].appId,

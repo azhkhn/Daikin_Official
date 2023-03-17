@@ -1,7 +1,9 @@
 // ignore_for_file: avoid_print, unused_import
 
+import 'package:daikin/Pages/Report/report.dart';
 import 'package:daikin/Widgets/buidnavbar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:package_info/package_info.dart';
 import '../../Routing/named_routes.dart';
 import '../../Routing/router.dart';
@@ -9,6 +11,7 @@ import '../../Constants/global.dart';
 import '../../Widgets/BottomBar/Components/button_attendence.dart';
 import '../../Widgets/BottomBar/Components/button_logout.dart';
 import '../../Widgets/BottomBar/Components/store_visit.dart';
+import '../Screen4/page4.dart';
 
 @immutable
 class SetupFlow extends StatefulWidget {
@@ -121,12 +124,8 @@ class SetupFlowState extends State<SetupFlow> {
                         elevation: 6.0,
                         child: TextButton(
                           onPressed: () {
-                            setState(() {
-                              settitlevalue = reportPageDisplayName;
-                            });
-                            navigatorKey.currentState!.pushNamedAndRemoveUntil(
-                                reportPageRoute, (route) => false);
-                            Navigator.of(context).pop();
+                            Navigator.pop(context);
+                            Get.to(()=>const ReportPage());
                           },
                           child: Column(
                             children: const [
@@ -162,9 +161,8 @@ class SetupFlowState extends State<SetupFlow> {
                             setState(() {
                               settitlevalue = profilePageDisplayName;
                             });
-                            navigatorKey.currentState!.pushNamedAndRemoveUntil(
-                                servicesPageRoute, (route) => false);
-                            Navigator.of(context).pop();
+                            Navigator.pop(context);
+                            Get.to(()=>const Page4());
                           },
                           child: Column(
                             children: const [
@@ -176,7 +174,8 @@ class SetupFlowState extends State<SetupFlow> {
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 20.0))
                             ],
-                          )),
+                          ),
+                      ),
                     ),
                   ),
                   const SizedBox(width: 5.0),

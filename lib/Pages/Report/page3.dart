@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:async';
+import 'package:daikin/Constants/global.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -49,7 +50,7 @@ class _Page3State extends State<Page3> {
           },
           javascriptMode: JavascriptMode.unrestricted,
           initialUrl:
-              'https://web.multiplier.co.in/ALFFTS/alfftsapp_menuData.action?userid=1001122',
+              'https://web.multiplier.co.in/dkffts/dkfftsapp_menuData.action?userid=${loginglobaldata.first.loginId}',
           onPageStarted: (url) {
             setState(() {
               loadingPercentage = 0;
@@ -61,9 +62,6 @@ class _Page3State extends State<Page3> {
             });
           },
           onPageFinished: (url) {
-            // _controller.runJavascript(
-            //   "document.getElementsByClassName('row mt-1 pt-40 justify-content-md-center')",
-            // );
             setState(() {
               loadingPercentage = 100;
             });

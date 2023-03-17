@@ -1,9 +1,12 @@
 // ignore_for_file: unrelated_type_equality_checks
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:package_info/package_info.dart';
 
 import '../Constants/global.dart';
+import '../Pages/Report/report.dart';
+import '../Pages/Screen4/page4.dart';
 import '../Routing/named_routes.dart';
 import 'BottomBar/Components/button_attendence.dart';
 import 'BottomBar/Components/button_logout.dart';
@@ -77,18 +80,14 @@ class _BuildNavBarState extends State<BuildNavBar> {
                         elevation: 6.0,
                         child: TextButton(
                           onPressed: () {
-                            setState(() {
-                              settitlevalue = reportPageDisplayName;
-                            });
-                            navigatorKey.currentState!.pushNamedAndRemoveUntil(
-                                reportPageRoute, (route) => false);
-                            Navigator.of(context).pop();
+                            Navigator.pop(context);
+                            Get.to(()=>const ReportPage());
                           },
                           child: Column(
                             children: const [
                               Image(
                                   image:
-                                      AssetImage('assets/reports_drawer.png'),
+                                  AssetImage('assets/reports_drawer.png'),
                                   height: 85),
                               Text(
                                 'Reports',
@@ -114,25 +113,25 @@ class _BuildNavBarState extends State<BuildNavBar> {
                       color: Colors.black,
                       elevation: 6.0,
                       child: TextButton(
-                          onPressed: () {
-                            setState(() {
-                              settitlevalue = profilePageDisplayName;
-                            });
-                            navigatorKey.currentState!.pushNamedAndRemoveUntil(
-                                servicesPageRoute, (route) => false);
-                            Navigator.of(context).pop();
-                          },
-                          child: Column(
-                            children: const [
-                              Image(
-                                  image:
-                                      AssetImage('assets/profile_drawer.png'),
-                                  height: 85),
-                              Text('Profile',
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20.0))
-                            ],
-                          )),
+                        onPressed: () {
+                          setState(() {
+                            settitlevalue = profilePageDisplayName;
+                          });
+                          Navigator.pop(context);
+                          Get.to(()=>const Page4());
+                        },
+                        child: Column(
+                          children: const [
+                            Image(
+                                image:
+                                AssetImage('assets/profile_drawer.png'),
+                                height: 85),
+                            Text('Profile',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20.0))
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(width: 5.0),
@@ -148,49 +147,49 @@ class _BuildNavBarState extends State<BuildNavBar> {
             ),
             (loginglobaldata.first.appId == "2")
                 ? Container(
-                    margin: const EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Row(
-                      children: [
-                        const Expanded(
-                          child: Card(
-                            color: Colors.black,
-                            elevation: 6.0,
-                            child: StoreVisit(),
-                          ),
-                        ),
-                        const SizedBox(width: 5.0),
-                        Expanded(
-                          child: TextButton(
-                            onPressed: () {},
-                            child: const Image(
-                                image: AssetImage('assets/white.png'),
-                                height: 120.0),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                : Container(
-                    margin: const EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Row(
-                      children: [
-                        const Expanded(
-                          child: Image(
-                              image: AssetImage('assets/white.png'),
-                              height: 120.0),
-                        ),
-                        const SizedBox(width: 5.0),
-                        Expanded(
-                          child: TextButton(
-                            onPressed: () {},
-                            child: const Image(
-                                image: AssetImage('assets/white.png'),
-                                height: 120.0),
-                          ),
-                        ),
-                      ],
+              margin: const EdgeInsets.only(left: 10.0, right: 10.0),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: Card(
+                      color: Colors.black,
+                      elevation: 6.0,
+                      child: StoreVisit(),
                     ),
                   ),
+                  const SizedBox(width: 5.0),
+                  Expanded(
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Image(
+                          image: AssetImage('assets/white.png'),
+                          height: 120.0),
+                    ),
+                  ),
+                ],
+              ),
+            )
+                : Container(
+              margin: const EdgeInsets.only(left: 10.0, right: 10.0),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: Image(
+                        image: AssetImage('assets/white.png'),
+                        height: 120.0),
+                  ),
+                  const SizedBox(width: 5.0),
+                  Expanded(
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Image(
+                          image: AssetImage('assets/white.png'),
+                          height: 120.0),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             const SizedBox(
               height: 160.0,
             ),
@@ -201,7 +200,7 @@ class _BuildNavBarState extends State<BuildNavBar> {
                 ElevatedButton(
                   style: const ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll<Color>(Colors.black)),
+                      MaterialStatePropertyAll<Color>(Colors.black)),
                   onPressed: () {},
                   child: FutureBuilder<PackageInfo>(
                     future: PackageInfo.fromPlatform(),

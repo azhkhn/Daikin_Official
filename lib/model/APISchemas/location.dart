@@ -13,9 +13,9 @@ class LocationDataDestination {
 
   factory LocationDataDestination.fromJson(Map<String, dynamic> json) {
     return LocationDataDestination(
-      latitude: json['LATITUDE'],
-      longitude: json['LONGITUDE'],
-      status: json['STATUS']
+      latitude: json['LATITUDE']==""?"0":json['LATITUDE'],
+      longitude: json['LONGITUDE']==""?"0":json['LONGITUDE'],
+      status: json['STATUS']=="N"?"Y":"Y"
     );
   }
 }

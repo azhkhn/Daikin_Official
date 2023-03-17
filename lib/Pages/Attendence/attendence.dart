@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 // import 'package:package_info/package_info.dart';
 import '../../Constants/global.dart';
 // import '../../Constants/style.dart';
@@ -10,6 +12,7 @@ import '../../Widgets/buidnavbar.dart';
 import '../../Widgets/custom_waiting_screen.dart';
 import '../../helpers/location_setter.dart';
 import '../Panel/panel_view.dart';
+import '../Profile/data_view.dart';
 import 'gmap.dart';
 import 'scoped.dart';
 
@@ -37,17 +40,6 @@ class _AttendencePageState extends State<AttendencePage> {
         appBar: AppBar(
           backgroundColor: Colors.black,
           centerTitle: true,
-          actions: [
-            GestureDetector(
-              onTap: () {
-                FocusScope.of(context).unfocus();
-                listeners.panelitem.setcapture =
-                    listeners.panelitem.setremark = false;
-                Navigator.pop(context);
-              },
-              child: const Icon(Icons.arrow_circle_left_outlined),
-            ),
-          ],
           title: const Text("Attendence"),
         ),
         drawer: const BuildNavBar(),

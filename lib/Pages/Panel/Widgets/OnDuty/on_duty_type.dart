@@ -48,9 +48,7 @@ class _DutyTypeState extends State<DutyType> {
         StateInherited.of(context).locationData!.latitude!, 
         StateInherited.of(context).locationData!.longitude! );
 
-    // setState(() {
     location_address_exact = locationAddress.first;
-    // });
     String? name = location_address_exact!.name;
     String? subLocality = location_address_exact!.subLocality;
     String? locality = location_address_exact!.locality;
@@ -67,6 +65,7 @@ class _DutyTypeState extends State<DutyType> {
     setState(() {
       _address = address; // update _address
     });
+    return address;
   }
 
   @override

@@ -9,8 +9,7 @@ class EveningImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imagestringevening =
-        ApiService().baseurl + ApiService().arvind + eimg!;
+    final imagestringevening = ApiService().baseurl + ApiService().daikin + eimg!;
     print(imagestringevening);
     return Column(
       children: [

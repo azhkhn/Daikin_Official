@@ -28,6 +28,11 @@ class _Page4State extends State<Page4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.black,
+        title: const Center(child: Text('Profile',style: TextStyle(color: Colors.white),)),
+      ),
       body: FutureBuilder(
       future: valueprofile,
       builder: (BuildContext context, AsyncSnapshot snapshot) {

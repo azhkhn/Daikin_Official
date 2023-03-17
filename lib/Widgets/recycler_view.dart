@@ -654,8 +654,8 @@ class _CalendarHeader extends StatelessWidget {
                 ),
                 onPressed: onLeftArrowTap,
               ),
-              Center(
-                child: Expanded(
+              Expanded(
+                child: Center(
                   child: SizedBox(
                     width: 165.0,
                     child: Text(
@@ -668,25 +668,6 @@ class _CalendarHeader extends StatelessWidget {
                   ),
                 ),
               ),
-              // IconButton(
-              //   icon: const Icon(
-              //     Icons.calendar_today,
-              //     size: 20.0,
-              //     color: Colors.white,
-              //   ),
-              //   visualDensity: VisualDensity.compact,
-              //   onPressed: onTodayButtonTap,
-              // ),
-              // if (clearButtonVisible)
-              //   IconButton(
-              //     icon: const Icon(
-              //       Icons.clear,
-              //       size: 20.0,
-              //       color: Colors.white,
-              //     ),
-              //     visualDensity: VisualDensity.compact,
-              //     onPressed: onClearButtonTap,
-              //   ),
               IconButton(
                 icon: const Icon(
                   Icons.arrow_forward,

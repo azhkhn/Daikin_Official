@@ -9,7 +9,7 @@ class MorningImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imagestring = ApiService().baseurl + ApiService().arvind + mimg!;
+    final imagestring = ApiService().baseurl + ApiService().daikin + mimg!;
     print(imagestring);
     return Column(
       children: [

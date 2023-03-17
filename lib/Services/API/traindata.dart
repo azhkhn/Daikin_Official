@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 import '../../Constants/global.dart';
 import '../../model/APISchemas/trrain.dart';
 
-
 Future<TrainDetail> gettraindata() async {
   var request = await http.post(
     Uri.parse(

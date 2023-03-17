@@ -2,6 +2,7 @@ import 'package:daikin/Pages/Attendence/attendence.dart';
 import 'package:daikin/Widgets/outlet_recyclerview.dart';
 import 'package:daikin/Widgets/recycler_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../Constants/global.dart';
@@ -237,13 +238,7 @@ class DataView extends StatelessWidget {
                             elevation: 6,
                             child: TextButton(
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const RecyclerViewData(),
-                                  ),
-                                );
+                                Get.to(const RecyclerViewData());
                               },
                               child: Container(
                                 padding: EdgeInsets.zero,
@@ -272,13 +267,7 @@ class DataView extends StatelessWidget {
                             elevation: 6,
                             child: TextButton(
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const OutLetRecyclerView(),
-                                  ),
-                                );
+                                Get.to(const OutLetRecyclerView());
                               },
                               child: Container(
                                 padding: EdgeInsets.zero,
@@ -525,13 +514,7 @@ class DataView extends StatelessWidget {
                                 elevation: 6,
                                 child: TextButton(
                                   onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            const AttendencePage(),
-                                      ),
-                                    );
+                                    Get.to(const AttendencePage());
                                   },
                                   child: Container(
                                     padding: EdgeInsets.zero,
@@ -838,13 +821,7 @@ class DataView extends StatelessWidget {
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                const AttendencePage(),
-                                          ),
-                                        );
+                                        Get.to(const AttendencePage());
                                       },
                                       child: Container(
                                         padding: EdgeInsets.zero,
@@ -886,12 +863,7 @@ class DataView extends StatelessWidget {
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () {
-                                        Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                            builder: (BuildContext context) =>
-                                                const RecyclerViewData(),
-                                          ),
-                                        );
+                                        Get.to(()=>const RecyclerViewData());
                                       },
                                       child: Container(
                                         padding: EdgeInsets.zero,
@@ -981,7 +953,7 @@ class DataView extends StatelessWidget {
                                     child: TextButton(
                                       onPressed: () async {
                                         String url =
-                                            'https://web.multiplier.co.in/dffts/dfftsapp_teamattendanceData.action?userid=${loginglobaldata.first.loginId}';
+                                            'https://web.multiplier.co.in/dkffts/dkfftsapp_teamattendanceData.action?userid=${loginglobaldata.first.loginId}';
                                         await launchUrl(
                                           Uri.parse(url),
                                         );
@@ -1028,7 +1000,7 @@ class DataView extends StatelessWidget {
                                     child: TextButton(
                                       onPressed: () async {
                                         String url =
-                                            'https://web.multiplier.co.in/dffts/dfftsapp_teamsalesData.action?userid=${loginglobaldata.first.loginId}';
+                                            'https://web.multiplier.co.in/dkffts/dkfftsapp_teamsalesData.action?userid=${loginglobaldata.first.loginId}';
                                         await launchUrl(
                                           Uri.parse(url),
                                         );
@@ -1153,13 +1125,7 @@ class DataView extends StatelessWidget {
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const AttendencePage(),
-                                              ),
-                                            );
+                                            Get.to(const AttendencePage());
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1462,13 +1428,7 @@ class DataView extends StatelessWidget {
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const AttendencePage(),
-                                                  ),
-                                                );
+                                                Get.to(const AttendencePage());
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1779,13 +1739,7 @@ class DataView extends StatelessWidget {
                                                 elevation: 6,
                                                 child: TextButton(
                                                   onPressed: () {
-                                                    Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            const AttendencePage(),
-                                                      ),
-                                                    );
+                                                    Get.to(const AttendencePage());
                                                   },
                                                   child: Container(
                                                     padding: EdgeInsets.zero,

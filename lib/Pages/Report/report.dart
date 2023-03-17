@@ -9,8 +9,13 @@ class ReportPage extends StatelessWidget {
 
    @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Page3(),
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.black,
+        title: const Center(child: Text('Report',style: TextStyle(color: Colors.white),)),
+      ),
+      body: const Page3(),
     );
   }
 }

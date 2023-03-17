@@ -69,7 +69,7 @@ class _SaveAttendenceImageState extends State<SaveAttendenceImage> {
     var request = http.MultipartRequest(
         'POST',
         Uri.parse(
-            'https://web.multiplier.co.in/ALFFTS/alfftssr_saveAttendance.action'));
+            'https://web.multiplier.co.in/dkffts/dkfftssr_saveAttendance.action'));
 
     request.fields['empId'] = loginglobaldata[0].loginId;
     request.fields['appId'] = loginglobaldata[0].appId;
