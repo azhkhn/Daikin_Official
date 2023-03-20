@@ -138,7 +138,7 @@ class _FormFieldsState extends State<FormFields> {
                             padding: const EdgeInsets.symmetric(vertical: 16),
                             child: const CustomText(
                               text: "Login",
-                              color: Colors.black,
+                              color: Colors.white,
                               size: 15,
                               weight: FontWeight.w400,
                             ),
