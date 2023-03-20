@@ -104,7 +104,7 @@ class _RecyclerViewDataState extends State<RecyclerViewData> {
             ),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black, width: 10.0)),
+                  border: Border.all(color: Colors.blue, width: 10.0)),
               child: Column(
                 children: [
                   SizedBox(
@@ -228,6 +228,12 @@ class _RecyclerViewDataState extends State<RecyclerViewData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.blue,
+        centerTitle: true,
+        title: const Text('View Beat Plan With Date'),
+      ),
       body: Column(
         children: [
           ValueListenableBuilder<DateTime>(
@@ -265,7 +271,7 @@ class _RecyclerViewDataState extends State<RecyclerViewData> {
           Container(
             padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
             decoration: const BoxDecoration(
-              color: Colors.black,
+              color: Colors.blue,
             ),
             child: Container(
               color: Colors.white,
@@ -343,11 +349,11 @@ class _RecyclerViewDataState extends State<RecyclerViewData> {
               markersAlignment: Alignment.bottomCenter,
               markersMaxCount: 4,
               markersOffset: PositionedOffset(),
-              markerDecoration: BoxDecoration( color: Colors.black, shape: BoxShape.circle,),
+              markerDecoration: BoxDecoration( color: Colors.blue, shape: BoxShape.circle,),
               selectedDecoration: BoxDecoration(color: Colors.transparent),
               selectedTextStyle: TextStyle(color: Colors.black),
               todayDecoration: BoxDecoration(color: Colors.transparent),
-              todayTextStyle: TextStyle(color: Colors.black),
+              todayTextStyle: TextStyle(color: Colors.blue),
             ),
             // onDaySelected: _onDaySelected,
             onRangeSelected: _onRangeSelected,
@@ -397,7 +403,7 @@ class _CalendarHeader extends StatelessWidget {
         Container(
           height: 60.0,
           decoration: const BoxDecoration(
-              color: Colors.black,
+              color: Colors.blue,
               borderRadius: BorderRadius.all(Radius.circular(15))),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 
-import '../../../Constants/global.dart';
 // import '../../../Constants/style.dart';
 import '../../../Routing/named_routes.dart';
 // import '../../../Widgets/BottomBar/Components/button_attendence.dart';
 // import '../../../Widgets/BottomBar/Components/button_logout.dart';
 // import '../../../Widgets/BottomBar/Components/store_visit.dart';
-import '../../../Widgets/buidnavbar.dart';
 import '../../../Widgets/recycler_view.dart';
 
 class BeatPlan extends StatefulWidget {
@@ -48,24 +46,8 @@ class _BeatPlanState extends State<BeatPlan> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('View Beat Plan With Date'),
-        actions: [
-          GestureDetector(
-            onTap: () {
-              FocusScope.of(context).unfocus();
-              listeners.panelitem.setcapture =
-                  listeners.panelitem.setremark = false;
-              Navigator.pop(context);
-            },
-            child: const Icon(Icons.arrow_circle_left_outlined),
-          ),
-        ],
-      ),
-      drawer: const BuildNavBar(),
-      body: const Center(child: RecyclerViewData()),
+    return const Scaffold(
+      body: Center(child: RecyclerViewData()),
     );
   }
 }

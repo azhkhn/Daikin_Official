@@ -16,11 +16,11 @@ class _OutletBeatPlanState extends State<OutletBeatPlan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: Colors.blue,
         title: const Text('Beat Plan By Outlet'),
       ),
-      drawer: const BuildNavBar(),
       body: const OutLetRecyclerView(),
       bottomSheet: const OutLetBeatPlanNavBar(),
     );

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'outlet_beat_plan/outlet_beat_plan.dart';
 import 'view_beat_plan/view_beat_plan.dart';
+import 'package:get/get.dart';
 
 class Options extends StatefulWidget {
   const Options({Key? key}) : super(key: key);
@@ -28,8 +29,7 @@ class _OptionsState extends State<Options> {
                 width: 250.0,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const OutletBeatPlan()));
+                    Get.to(()=>OutletBeatPlan());
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -49,8 +49,7 @@ class _OptionsState extends State<Options> {
                 width: 250.0,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const BeatPlan()));
+                    Get.to(()=>BeatPlan());
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,

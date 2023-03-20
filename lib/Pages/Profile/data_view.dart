@@ -4,7 +4,6 @@ import 'package:daikin/Widgets/outlet_recyclerview.dart';
 import 'package:daikin/Widgets/recycler_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../Constants/global.dart';
 
@@ -12,8 +11,8 @@ class DataView extends StatelessWidget {
   const DataView({
     Key? key,
   }) : super(key: key);
-   _handleURLButtonPress(BuildContext context, String url, String title) {
-     Get.to(()=>WebViewPage(url, title));
+  _handleURLButtonPress(BuildContext context, String url, String title) {
+    Get.to(() => WebViewPage(url, title));
   }
 
   @override
@@ -242,7 +241,7 @@ class DataView extends StatelessWidget {
                             elevation: 6,
                             child: TextButton(
                               onPressed: () {
-                                Get.to(()=>const RecyclerViewData());
+                                Get.to(() => const RecyclerViewData());
                               },
                               child: Container(
                                 padding: EdgeInsets.zero,
@@ -271,7 +270,7 @@ class DataView extends StatelessWidget {
                             elevation: 6,
                             child: TextButton(
                               onPressed: () {
-                                Get.to(()=>const OutLetRecyclerView());
+                                Get.to(() => const OutLetRecyclerView());
                               },
                               child: Container(
                                 padding: EdgeInsets.zero,
@@ -512,7 +511,7 @@ class DataView extends StatelessWidget {
                                 elevation: 6,
                                 child: TextButton(
                                   onPressed: () {
-                                    Get.to(()=>const AttendencePage());
+                                    Get.to(() => const AttendencePage());
                                   },
                                   child: Container(
                                     padding: EdgeInsets.zero,
@@ -645,10 +644,10 @@ class DataView extends StatelessWidget {
                                 elevation: 6,
                                 child: TextButton(
                                   onPressed: () async {
-                                        _handleURLButtonPress(
-                                            context,
-                                            'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
-                                            "My Sales Summary");
+                                    _handleURLButtonPress(
+                                        context,
+                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                        "My Sales Summary");
                                   },
                                   child: Container(
                                     padding: EdgeInsets.zero,
@@ -769,10 +768,124 @@ class DataView extends StatelessWidget {
                               margin: const EdgeInsets.all(0),
                               color: Colors.white,
                               elevation: 6,
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    RichText(
+                                      text: TextSpan(
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        children: <TextSpan>[
+                                          const TextSpan(text: "HELLO!"),
+                                          const TextSpan(text: "   "),
+                                          TextSpan(
+                                            text: loginglobaldata.first.empName,
+                                            style:
+                                                const TextStyle(fontSize: 18),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(height: 8),
+                                    RichText(
+                                      text: TextSpan(
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        children: <TextSpan>[
+                                          const TextSpan(text: "Designation"),
+                                          const TextSpan(text: "     "),
+                                          TextSpan(
+                                            text: loginglobaldata.first.appId ==
+                                                    "1"
+                                                ? "ISD"
+                                                : loginglobaldata.first.appId ==
+                                                        "2"
+                                                    ? "TL"
+                                                    : loginglobaldata
+                                                                .first.appId ==
+                                                            "3"
+                                                        ? "RSO"
+                                                        : loginglobaldata.first
+                                                                    .appId ==
+                                                                "4"
+                                                            ? "DSP ISD"
+                                                            : loginglobaldata
+                                                                        .first
+                                                                        .appId ==
+                                                                    "5"
+                                                                ? "MIS"
+                                                                : dashboardglobaldata
+                                                                    .first
+                                                                    .designation,
+                                            style:
+                                                const TextStyle(fontSize: 15),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(height: 8),
+                                    RichText(
+                                      text: TextSpan(
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        children: <TextSpan>[
+                                          const TextSpan(text: "EmpId"),
+                                          const TextSpan(text: "     "),
+                                          TextSpan(
+                                            text: loginglobaldata.first.loginId,
+                                            style:
+                                                const TextStyle(fontSize: 15),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(height: 8),
+                                    RichText(
+                                      text: const TextSpan(
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        children: <TextSpan>[
+                                          TextSpan(text: "Branch Name"),
+                                          TextSpan(text: "     "),
+                                          TextSpan(
+                                            text: "Delhi",
+                                            style: TextStyle(fontSize: 15),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(height: 8),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          SizedBox(
+                            width: double.infinity,
+                            child: Card(
+                              margin: const EdgeInsets.all(0),
+                              color: Colors.white,
+                              elevation: 6,
                               child: Column(
                                 children: [
                                   Container(
-                                    height: 80.0,
                                     width: double.infinity,
                                     padding: const EdgeInsets.all(6.0),
                                     child: Padding(
@@ -789,9 +902,6 @@ class DataView extends StatelessWidget {
                                                   fontSize: 18.0,
                                                   fontWeight: FontWeight.bold),
                                             ),
-                                            TextSpan(
-                                                text:
-                                                    '\nWelcome back in Daikin Force Field Management System\nApplication'),
                                           ],
                                         ),
                                       ),
@@ -815,7 +925,7 @@ class DataView extends StatelessWidget {
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () {
-                                        Get.to(()=>const AttendencePage());
+                                        Get.to(() => const AttendencePage());
                                       },
                                       child: Container(
                                         padding: EdgeInsets.zero,
@@ -906,11 +1016,10 @@ class DataView extends StatelessWidget {
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () async {
-                                        String url =
-                                            'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                        await launchUrl(
-                                          Uri.parse(url),
-                                        );
+                                        _handleURLButtonPress(
+                                            context,
+                                            'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                            "Attendance Summary");
                                       },
                                       child: Container(
                                         padding: EdgeInsets.zero,
@@ -946,7 +1055,10 @@ class DataView extends StatelessWidget {
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () async {
-                                        _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_teamattendanceData.action?userid=${loginglobaldata.first.loginId}', "Team Attendance");
+                                        _handleURLButtonPress(
+                                            context,
+                                            'https://web.multiplier.co.in/dkffts/dkfftsapp_teamattendanceData.action?userid=${loginglobaldata.first.loginId}',
+                                            "Team Attendance");
                                       },
                                       child: Container(
                                         padding: EdgeInsets.zero,
@@ -989,7 +1101,10 @@ class DataView extends StatelessWidget {
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () async {
-                                        _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_teamsalesData.action?userid=${loginglobaldata.first.loginId}', "Team Sales Summary");
+                                        _handleURLButtonPress(
+                                            context,
+                                            'https://web.multiplier.co.in/dkffts/dkfftsapp_teamsalesData.action?userid=${loginglobaldata.first.loginId}',
+                                            "Team Sales Summary");
                                       },
                                       child: Container(
                                         padding: EdgeInsets.zero,
@@ -1064,10 +1179,124 @@ class DataView extends StatelessWidget {
                                   margin: const EdgeInsets.all(0),
                                   color: Colors.white,
                                   elevation: 6,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        RichText(
+                                          text: TextSpan(
+                                            style: const TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            children: <TextSpan>[
+                                              const TextSpan(text: "HELLO!"),
+                                              const TextSpan(text: "   "),
+                                              TextSpan(
+                                                text: loginglobaldata.first.empName,
+                                                style:
+                                                const TextStyle(fontSize: 18),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8),
+                                        RichText(
+                                          text: TextSpan(
+                                            style: const TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            children: <TextSpan>[
+                                              const TextSpan(text: "Designation"),
+                                              const TextSpan(text: "     "),
+                                              TextSpan(
+                                                text: loginglobaldata.first.appId ==
+                                                    "1"
+                                                    ? "ISD"
+                                                    : loginglobaldata.first.appId ==
+                                                    "2"
+                                                    ? "TL"
+                                                    : loginglobaldata
+                                                    .first.appId ==
+                                                    "3"
+                                                    ? "RSO"
+                                                    : loginglobaldata.first
+                                                    .appId ==
+                                                    "4"
+                                                    ? "DSP ISD"
+                                                    : loginglobaldata
+                                                    .first
+                                                    .appId ==
+                                                    "5"
+                                                    ? "MIS"
+                                                    : dashboardglobaldata
+                                                    .first
+                                                    .designation,
+                                                style:
+                                                const TextStyle(fontSize: 15),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8),
+                                        RichText(
+                                          text: TextSpan(
+                                            style: const TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            children: <TextSpan>[
+                                              const TextSpan(text: "EmpId"),
+                                              const TextSpan(text: "     "),
+                                              TextSpan(
+                                                text: loginglobaldata.first.loginId,
+                                                style:
+                                                const TextStyle(fontSize: 15),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8),
+                                        RichText(
+                                          text: const TextSpan(
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            children: <TextSpan>[
+                                              TextSpan(text: "Branch Name"),
+                                              TextSpan(text: "     "),
+                                              TextSpan(
+                                                text: "Delhi",
+                                                style: TextStyle(fontSize: 15),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              SizedBox(
+                                width: double.infinity,
+                                child: Card(
+                                  margin: const EdgeInsets.all(0),
+                                  color: Colors.white,
+                                  elevation: 6,
                                   child: Column(
                                     children: [
                                       Container(
-                                        height: 80.0,
                                         width: double.infinity,
                                         padding: const EdgeInsets.all(6.0),
                                         child: Padding(
@@ -1084,11 +1313,7 @@ class DataView extends StatelessWidget {
                                                       fontSize: 18.0,
                                                       fontWeight:
                                                           FontWeight.bold),
-                                                ),
-                                                TextSpan(
-                                                    text:
-                                                        '\nWelcome back in Daikin Force Field Management System\nApplication'),
-                                              ],
+                                                ),],
                                             ),
                                           ),
                                         ),
@@ -1111,7 +1336,8 @@ class DataView extends StatelessWidget {
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () {
-                                            Get.to(()=>const AttendencePage());
+                                            Get.to(
+                                                () => const AttendencePage());
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1153,7 +1379,10 @@ class DataView extends StatelessWidget {
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () async {
-                                            _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Attendance Summary");
+                                            _handleURLButtonPress(
+                                                context,
+                                                'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                "Attendance Summary");
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1196,7 +1425,10 @@ class DataView extends StatelessWidget {
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () async {
-                                            _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Team Attendance Summary");
+                                            _handleURLButtonPress(
+                                                context,
+                                                'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                "Team Attendance Summary");
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1232,7 +1464,10 @@ class DataView extends StatelessWidget {
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () async {
-                                            _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Team Sales Summary");
+                                            _handleURLButtonPress(
+                                                context,
+                                                'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                "Team Sales Summary");
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1275,7 +1510,10 @@ class DataView extends StatelessWidget {
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () async {
-                                            _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_targetachievement.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Target Vs Achievement");
+                                            _handleURLButtonPress(
+                                                context,
+                                                'https://web.multiplier.co.in/dkffts/dkfftsapp_targetachievement.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                "Target Vs Achievement");
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1350,10 +1588,124 @@ class DataView extends StatelessWidget {
                                       margin: const EdgeInsets.all(0),
                                       color: Colors.white,
                                       elevation: 6,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(12.0),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            RichText(
+                                              text: TextSpan(
+                                                style: const TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                                children: <TextSpan>[
+                                                  const TextSpan(text: "HELLO!"),
+                                                  const TextSpan(text: "   "),
+                                                  TextSpan(
+                                                    text: loginglobaldata.first.empName,
+                                                    style:
+                                                    const TextStyle(fontSize: 18),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            const SizedBox(height: 8),
+                                            RichText(
+                                              text: TextSpan(
+                                                style: const TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                                children: <TextSpan>[
+                                                  const TextSpan(text: "Designation"),
+                                                  const TextSpan(text: "     "),
+                                                  TextSpan(
+                                                    text: loginglobaldata.first.appId ==
+                                                        "1"
+                                                        ? "ISD"
+                                                        : loginglobaldata.first.appId ==
+                                                        "2"
+                                                        ? "TL"
+                                                        : loginglobaldata
+                                                        .first.appId ==
+                                                        "3"
+                                                        ? "RSO"
+                                                        : loginglobaldata.first
+                                                        .appId ==
+                                                        "4"
+                                                        ? "DSP ISD"
+                                                        : loginglobaldata
+                                                        .first
+                                                        .appId ==
+                                                        "5"
+                                                        ? "MIS"
+                                                        : dashboardglobaldata
+                                                        .first
+                                                        .designation,
+                                                    style:
+                                                    const TextStyle(fontSize: 15),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            const SizedBox(height: 8),
+                                            RichText(
+                                              text: TextSpan(
+                                                style: const TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                                children: <TextSpan>[
+                                                  const TextSpan(text: "EmpId"),
+                                                  const TextSpan(text: "     "),
+                                                  TextSpan(
+                                                    text: loginglobaldata.first.loginId,
+                                                    style:
+                                                    const TextStyle(fontSize: 15),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            const SizedBox(height: 8),
+                                            RichText(
+                                              text: const TextSpan(
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                                children: <TextSpan>[
+                                                  TextSpan(text: "Branch Name"),
+                                                  TextSpan(text: "     "),
+                                                  TextSpan(
+                                                    text: "Delhi",
+                                                    style: TextStyle(fontSize: 15),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            const SizedBox(height: 8),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 8,
+                                  ),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: Card(
+                                      margin: const EdgeInsets.all(0),
+                                      color: Colors.white,
+                                      elevation: 6,
                                       child: Column(
                                         children: [
                                           Container(
-                                            height: 80.0,
                                             width: double.infinity,
                                             padding: const EdgeInsets.all(6.0),
                                             child: Padding(
@@ -1371,11 +1723,7 @@ class DataView extends StatelessWidget {
                                                           fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.bold),
-                                                    ),
-                                                    TextSpan(
-                                                        text:
-                                                            '\nWelcome back in Daikin Force Field Management System\nApplication'),
-                                                  ],
+                                                    ),],
                                                 ),
                                               ),
                                             ),
@@ -1398,7 +1746,8 @@ class DataView extends StatelessWidget {
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () {
-                                                Get.to(()=>const AttendencePage());
+                                                Get.to(() =>
+                                                    const AttendencePage());
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1440,7 +1789,10 @@ class DataView extends StatelessWidget {
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () async {
-                                                _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Sales Form");
+                                                _handleURLButtonPress(
+                                                    context,
+                                                    'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                    "Sales Form");
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1489,7 +1841,10 @@ class DataView extends StatelessWidget {
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () async {
-                                                _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Attendance Summary");
+                                                _handleURLButtonPress(
+                                                    context,
+                                                    'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                    "Attendance Summary");
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1525,7 +1880,10 @@ class DataView extends StatelessWidget {
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () async {
-                                                _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Sales Summary");
+                                                _handleURLButtonPress(
+                                                    context,
+                                                    'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                    "Sales Summary");
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1568,7 +1926,10 @@ class DataView extends StatelessWidget {
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () async {
-                                                _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_targetachievement.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Target Vs Achievement");
+                                                _handleURLButtonPress(
+                                                    context,
+                                                    'https://web.multiplier.co.in/dkffts/dkfftsapp_targetachievement.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                    "Target Vs Achievement");
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1643,10 +2004,124 @@ class DataView extends StatelessWidget {
                                           margin: const EdgeInsets.all(0),
                                           color: Colors.white,
                                           elevation: 6,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(12.0),
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  text: TextSpan(
+                                                    style: const TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 18,
+                                                      fontWeight: FontWeight.bold,
+                                                    ),
+                                                    children: <TextSpan>[
+                                                      const TextSpan(text: "HELLO!"),
+                                                      const TextSpan(text: "   "),
+                                                      TextSpan(
+                                                        text: loginglobaldata.first.empName,
+                                                        style:
+                                                        const TextStyle(fontSize: 18),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 8),
+                                                RichText(
+                                                  text: TextSpan(
+                                                    style: const TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 18,
+                                                      fontWeight: FontWeight.bold,
+                                                    ),
+                                                    children: <TextSpan>[
+                                                      const TextSpan(text: "Designation"),
+                                                      const TextSpan(text: "     "),
+                                                      TextSpan(
+                                                        text: loginglobaldata.first.appId ==
+                                                            "1"
+                                                            ? "ISD"
+                                                            : loginglobaldata.first.appId ==
+                                                            "2"
+                                                            ? "TL"
+                                                            : loginglobaldata
+                                                            .first.appId ==
+                                                            "3"
+                                                            ? "RSO"
+                                                            : loginglobaldata.first
+                                                            .appId ==
+                                                            "4"
+                                                            ? "DSP ISD"
+                                                            : loginglobaldata
+                                                            .first
+                                                            .appId ==
+                                                            "5"
+                                                            ? "MIS"
+                                                            : dashboardglobaldata
+                                                            .first
+                                                            .designation,
+                                                        style:
+                                                        const TextStyle(fontSize: 15),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 8),
+                                                RichText(
+                                                  text: TextSpan(
+                                                    style: const TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 18,
+                                                      fontWeight: FontWeight.bold,
+                                                    ),
+                                                    children: <TextSpan>[
+                                                      const TextSpan(text: "EmpId"),
+                                                      const TextSpan(text: "     "),
+                                                      TextSpan(
+                                                        text: loginglobaldata.first.loginId,
+                                                        style:
+                                                        const TextStyle(fontSize: 15),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 8),
+                                                RichText(
+                                                  text: const TextSpan(
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 18,
+                                                      fontWeight: FontWeight.bold,
+                                                    ),
+                                                    children: <TextSpan>[
+                                                      TextSpan(text: "Branch Name"),
+                                                      TextSpan(text: "     "),
+                                                      TextSpan(
+                                                        text: "Delhi",
+                                                        style: TextStyle(fontSize: 15),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 8),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 8,
+                                      ),
+                                      SizedBox(
+                                        width: double.infinity,
+                                        child: Card(
+                                          margin: const EdgeInsets.all(0),
+                                          color: Colors.white,
+                                          elevation: 6,
                                           child: Column(
                                             children: [
                                               Container(
-                                                height: 80.0,
                                                 width: double.infinity,
                                                 padding:
                                                     const EdgeInsets.all(6.0),
@@ -1666,11 +2141,7 @@ class DataView extends StatelessWidget {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold),
-                                                        ),
-                                                        TextSpan(
-                                                            text:
-                                                                '\nWelcome back in Daikin Force Field Management System\nApplication'),
-                                                      ],
+                                                        ),],
                                                     ),
                                                   ),
                                                 ),
@@ -1693,7 +2164,7 @@ class DataView extends StatelessWidget {
                                                 elevation: 6,
                                                 child: TextButton(
                                                   onPressed: () {
-                                                    Get.to(()=>
+                                                    Get.to(() =>
                                                         const AttendencePage());
                                                   },
                                                   child: Container(
@@ -1739,7 +2210,10 @@ class DataView extends StatelessWidget {
                                                 elevation: 6,
                                                 child: TextButton(
                                                   onPressed: () async {
-                                                    _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Attendance Summary");
+                                                    _handleURLButtonPress(
+                                                        context,
+                                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                        "Attendance Summary");
                                                   },
                                                   child: Container(
                                                     padding: EdgeInsets.zero,
@@ -1784,7 +2258,10 @@ class DataView extends StatelessWidget {
                                                 elevation: 6,
                                                 child: TextButton(
                                                   onPressed: () async {
-                                                    _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Team Attendance Summary");
+                                                    _handleURLButtonPress(
+                                                        context,
+                                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                        "Team Attendance Summary");
                                                   },
                                                   child: Container(
                                                     padding: EdgeInsets.zero,
@@ -1822,7 +2299,10 @@ class DataView extends StatelessWidget {
                                                 elevation: 6,
                                                 child: TextButton(
                                                   onPressed: () async {
-                                                    _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Team Sales Summary");
+                                                    _handleURLButtonPress(
+                                                        context,
+                                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                                        "Team Sales Summary");
                                                   },
                                                   child: Container(
                                                     padding: EdgeInsets.zero,

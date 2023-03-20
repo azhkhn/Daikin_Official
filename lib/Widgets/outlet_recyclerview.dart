@@ -42,7 +42,7 @@ class _OutLetRecyclerViewState extends State<OutLetRecyclerView> {
     return Column(
       children: [
         Container(
-          color: Colors.blueGrey,
+          color: Colors.lightBlueAccent,
           padding: EdgeInsets.zero,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -55,14 +55,14 @@ class _OutLetRecyclerViewState extends State<OutLetRecyclerView> {
                   child: Container(
                     padding: const EdgeInsets.all(5.0),
                     child: const TextField(
-                      cursorColor: Colors.black,
+                      cursorColor: Colors.lightBlueAccent,
                       decoration: InputDecoration(
-                        focusColor: Colors.black,
+                        focusColor: Colors.lightBlueAccent,
                         focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black)),
+                            borderSide: BorderSide(color: Colors.lightBlueAccent)),
                         labelText: 'Search',
                         labelStyle: TextStyle(color: Colors.white),
-                        fillColor: Colors.black,
+                        fillColor: Colors.lightBlueAccent,
                       ),
                     ),
                   ),
@@ -94,15 +94,16 @@ class _OutLetRecyclerViewState extends State<OutLetRecyclerView> {
                 data == null ? 0 : (data!.entries.first.value.length),
             itemBuilder: (context, index) {
               return Container(
-                color: Colors.blueGrey,
+                color: Colors.lightBlueAccent,
                 child: TextButton(
                   onPressed: () {},
                   child: Container(
                     color: Colors.white,
                     child: ListTile(
                       leading: Checkbox(
+                        fillColor: const MaterialStatePropertyAll<Color>(Colors.lightBlueAccent),
                         value: selectedItem.contains(index) ? true : false,
-                        activeColor: Colors.black,
+                        activeColor: Colors.blue,
                         onChanged: (newValue) {
                           if (selectedItem.contains(index)) {
                             selectedItem.remove(index);
@@ -116,19 +117,19 @@ class _OutLetRecyclerViewState extends State<OutLetRecyclerView> {
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
                             'Dealer Name: ${data!.entries.first.value[index]["dealerName"]}',
-                            style: const TextStyle(color: Colors.black)),
+                            style: const TextStyle(color: Colors.lightBlueAccent)),
                       ),
                       subtitle: Padding(
                         padding: const EdgeInsets.only(top: 10.0),
                         child: Text(
                             'Address: ${data!.entries.first.value[index]["location"]}',
-                            style: const TextStyle(color: Colors.black)),
+                            style: const TextStyle(color: Colors.lightBlueAccent)),
                       ),
                       trailing: Padding(
                         padding: const EdgeInsets.only(bottom: 40.0),
                         child: Text(
                             'Dealer ID: ${data!.entries.first.value[index]["dealerId"]}',
-                            style: const TextStyle(color: Colors.black)),
+                            style: const TextStyle(color: Colors.lightBlueAccent)),
                       ),
                     ),
                   ),
