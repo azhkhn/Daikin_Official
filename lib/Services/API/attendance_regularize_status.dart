@@ -4,16 +4,12 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../Constants/global.dart';
 
-weekOffStatus() async {
-  print("  'empId': ${loginglobaldata[0].loginId}");
-  print("  'appId': ${loginglobaldata[0].dealerId}");
-
+attendanceRegularizeStatus() async {
   var response = await http.post(
     Uri.parse(
-        'https://web.multiplier.co.in/dkffts/dkfftssr_weekoffStatus.action'),
+        'https://web.multiplier.co.in/dkffts/dkfftssr_findpreviousdayattd.action'),
     body: {
       'empId': loginglobaldata[0].loginId,
-      'appId': loginglobaldata[0].appId
     },
   );
 

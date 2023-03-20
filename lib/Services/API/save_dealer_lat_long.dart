@@ -6,7 +6,7 @@ import '../../Constants/global.dart';
 import '../../helpers/location_setter.dart';
 
 
-savedealerlatlong(String remarks, String attendanceType, context) async {
+saveDealerLatLong(String remarks, String attendanceType, context) async {
   print("  'empId': ${loginglobaldata[0].loginId} ");
   print("  'dealerId': ${loginglobaldata[0].dealerId}");
   print("  'latitude': ${StateInherited.of(context).locationData!.latitude.toString()} ");

@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../Constants/global.dart';
 
-getdealerlatlong(String remarks, String attendanceType, context) async {
+getdealerlatlong() async {
   print("  'empId': ${loginglobaldata[0].loginId} ");
   print("  'appId': ${loginglobaldata[0].dealerId}");
 
