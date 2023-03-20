@@ -38,7 +38,7 @@ class _AttendencePageState extends State<AttendencePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.blue,
           centerTitle: true,
           title: const Text("Attendence"),
         ),

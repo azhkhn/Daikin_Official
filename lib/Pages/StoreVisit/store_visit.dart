@@ -23,7 +23,7 @@ class _StoreVisitDataState extends State<StoreVisitData> {
     return Scaffold(
         backgroundColor: Colors.white70,
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.blue,
           centerTitle: true,
           title: const Text("Manage Beat Plan"),
         ),

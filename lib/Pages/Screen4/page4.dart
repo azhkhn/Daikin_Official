@@ -30,7 +30,7 @@ class _Page4State extends State<Page4> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
         title: const Center(child: Text('Profile',style: TextStyle(color: Colors.white),)),
       ),
       body: FutureBuilder(

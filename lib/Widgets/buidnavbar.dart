@@ -68,7 +68,7 @@ class _BuildNavBarState extends State<BuildNavBar> {
                 children: [
                   const Expanded(
                     child: Card(
-                      color: Colors.black,
+                      color: Colors.blue,
                       elevation: 6.0,
                       child: ButtonAttendence(),
                     ),
@@ -76,7 +76,7 @@ class _BuildNavBarState extends State<BuildNavBar> {
                   const SizedBox(width: 5.0),
                   Expanded(
                     child: Card(
-                        color: Colors.black,
+                        color: Colors.blue,
                         elevation: 6.0,
                         child: TextButton(
                           onPressed: () {
@@ -110,7 +110,7 @@ class _BuildNavBarState extends State<BuildNavBar> {
                 children: [
                   Expanded(
                     child: Card(
-                      color: Colors.black,
+                      color: Colors.blue,
                       elevation: 6.0,
                       child: TextButton(
                         onPressed: () {
@@ -137,7 +137,7 @@ class _BuildNavBarState extends State<BuildNavBar> {
                   const SizedBox(width: 5.0),
                   const Expanded(
                     child: Card(
-                      color: Colors.black,
+                      color: Colors.blue,
                       elevation: 6.0,
                       child: ButtonLogout(),
                     ),
@@ -152,7 +152,7 @@ class _BuildNavBarState extends State<BuildNavBar> {
                 children: [
                   const Expanded(
                     child: Card(
-                      color: Colors.black,
+                      color: Colors.blue,
                       elevation: 6.0,
                       child: StoreVisit(),
                     ),
@@ -200,7 +200,7 @@ class _BuildNavBarState extends State<BuildNavBar> {
                 ElevatedButton(
                   style: const ButtonStyle(
                       backgroundColor:
-                      MaterialStatePropertyAll<Color>(Colors.black)),
+                      MaterialStatePropertyAll<Color>(Colors.blue)),
                   onPressed: () {},
                   child: FutureBuilder<PackageInfo>(
                     future: PackageInfo.fromPlatform(),

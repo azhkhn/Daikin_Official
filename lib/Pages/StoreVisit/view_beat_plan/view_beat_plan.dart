@@ -50,7 +50,7 @@ class _BeatPlanState extends State<BeatPlan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
         title: const Text('View Beat Plan With Date'),
         actions: [
           GestureDetector(

@@ -23,7 +23,7 @@ class _OptionsState extends State<Options> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                color: Colors.black,
+                color: Colors.blue,
                 height: 250.0,
                 width: 250.0,
                 child: TextButton(
@@ -44,7 +44,7 @@ class _OptionsState extends State<Options> {
               ),
               const SizedBox(height: 20.0),
               Container(
-                color: Colors.black,
+                color: Colors.blue,
                 height: 250.0,
                 width: 250.0,
                 child: TextButton(

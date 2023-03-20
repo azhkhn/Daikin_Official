@@ -93,7 +93,7 @@ class TrainTransition extends StatelessWidget {
                                                     backgroundColor:
                                                         MaterialStatePropertyAll<
                                                                 Color>(
-                                                            Colors.black)),
+                                                            Colors.blue)),
                                                 child: const Text(
                                                   'Okay',
                                                   style: TextStyle(

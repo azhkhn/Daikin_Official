@@ -56,7 +56,7 @@ class _MapViewState extends State<MapView> {
         ? Column(children: [
             const Divider(
               height: 2,
-              color: Colors.black,
+              color: Colors.blue,
               thickness: 5,
             ),
             Expanded(
@@ -88,7 +88,7 @@ class _MapViewState extends State<MapView> {
             ),
             const Divider(
               height: 2,
-              color: Colors.black,
+              color: Colors.blue,
               thickness: 5,
             ),
           ])

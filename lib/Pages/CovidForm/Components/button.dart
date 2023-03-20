@@ -23,7 +23,7 @@ class Button extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 16),
           child: const CustomText(
             text: "I AGREE",
-            color: Colors.black,
+            color: Colors.white,
             size: 15,
             weight: FontWeight.w400,
           )),

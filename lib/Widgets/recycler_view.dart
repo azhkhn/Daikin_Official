@@ -1,248 +1,3 @@
-// // ignore_for_file: avoid_print, unused_element
-//
-// import 'dart:async';
-// import 'dart:convert';
-// import 'package:beatplan/small_map.dart';
-// import 'package:flutter/material.dart';
-// import 'package:http/http.dart' as http;
-// import 'package:location/location.dart';
-// import 'StoreVisit/outlet_beat_plan/outlet_beat_plan.dart';
-//
-// Future<LocationData?> _currentLocation() async {
-//   bool serviceEnabled;
-//   PermissionStatus permissionGranted;
-//
-//   Location location = Location();
-//
-//   serviceEnabled = await location.serviceEnabled();
-//   if (!serviceEnabled) {
-//     serviceEnabled = await location.requestService();
-//     if (!serviceEnabled) {
-//       return null;
-//     }
-//   }
-//
-//   permissionGranted = await location.hasPermission();
-//   if (permissionGranted == PermissionStatus.denied) {
-//     permissionGranted = await location.requestPermission();
-//     if (permissionGranted != PermissionStatus.granted) {
-//       return null;
-//     }
-//   }
-//   return await location.getLocation();
-// }
-//
-// class RecyclerViewData extends StatefulWidget {
-//   const RecyclerViewData({Key? key}) : super(key: key);
-//
-//   @override
-//   State<RecyclerViewData> createState() => _RecyclerViewDataState();
-// }
-//
-// class _RecyclerViewDataState extends State<RecyclerViewData> {
-//   List? data;
-//   Future<String> getData() async {
-//     var response = await http.get(
-//         Uri.parse("https://mock-json-service.glitch.me/"));
-//     await Future.delayed(const Duration(microseconds: 10));
-//     setState(() {
-//       data = json.decode(response.body);
-//     });
-//     return "Success!";
-//   }
-//
-//   @override
-//   void initState() {
-//     super.initState();
-//     getData();
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//         color: Colors.white,
-//         child: ListView.builder(
-//             itemCount: data == null ? 0 : data!.length,
-//             itemBuilder: (context, index) {
-//               return TextButton(
-//                   onPressed: () {
-//                     showAlertDialog(BuildContext context) {
-//                       Widget cancelButton = TextButton(
-//                         child: const Text("Cancel",
-//                             style: TextStyle(color: Colors.white)),
-//                         onPressed: () {
-//                           Navigator.of(context).pop();
-//                         },
-//                       );
-//                       Widget continueButton = TextButton(
-//                         child: const Text(
-//                           "Continue",
-//                           style: TextStyle(color: Colors.white),
-//                         ),
-//                         onPressed: () {
-//                           Navigator.of(context).push(MaterialPageRoute(
-//                               builder: (context) => const OutletBeatPlan()));
-//                         },
-//                       );
-//                       AlertDialog alert = AlertDialog(
-//                         insetPadding: const EdgeInsets.all(5.0),
-//                         scrollable: true,
-//                         content: Container(
-//                           width: MediaQuery.of(context).size.width,
-//                           color: Colors.white,
-//                           child: Column(
-//                             children: [
-//                               Container(
-//                                   width: double.infinity,
-//                                   height: 40.0,
-//                                   color: Colors.black,
-//                                   child: const Center(
-//                                       child: Text(
-//                                     "Selected Date is : 01/02/23",
-//                                     style: TextStyle(
-//                                         color: Colors.white, fontSize: 15.0),
-//                                   ))),
-//                               Container(
-//                                 height: 5.0,
-//                                 color: Colors.white,
-//                               ),
-//                               Container(
-//                                 decoration: BoxDecoration(
-//                                     border: Border.all(
-//                                         color: Colors.black, width: 10.0)),
-//                                 child: Column(
-//                                   children: [
-//                                     SizedBox(
-//                                       height: 380,
-//                                       child: ListView.builder(
-//                                           itemCount: 6,
-//                                           itemBuilder: (context, i) {
-//                                             return Row(
-//                                               children: [
-//                                                 Padding(
-//                                                   padding: const EdgeInsets.all(
-//                                                       18.0),
-//                                                   child: Column(
-//                                                       crossAxisAlignment:
-//                                                           CrossAxisAlignment
-//                                                               .start,
-//                                                       children: [
-//                                                         const Text(
-//                                                             'Dealer Name:'),
-//                                                         const Text(
-//                                                             'Electronic Paradise'),
-//                                                         const Text(''),
-//                                                         const Text(
-//                                                             'Address : B1 Janakpuri'),
-//                                                         const Text(''),
-//                                                         Padding(
-//                                                           padding:
-//                                                               const EdgeInsets
-//                                                                       .only(
-//                                                                   left: 40.0),
-//                                                           child: ElevatedButton(
-//                                                               onPressed: () {},
-//                                                               style: const ButtonStyle(
-//                                                                   backgroundColor:
-//                                                                       MaterialStatePropertyAll<
-//                                                                               Color>(
-//                                                                           Colors
-//                                                                               .grey)),
-//                                                               child: const Text(
-//                                                                   'Edit')),
-//                                                         ),
-//                                                       ]),
-//                                                 ),
-//                                                 Column(
-//                                                   crossAxisAlignment:
-//                                                       CrossAxisAlignment.start,
-//                                                   children: [
-//                                                     const Text('Dealer ID:'),
-//                                                     const Text('10001'),
-//                                                     const Text(''),
-//                                                     const Text(''),
-//                                                     const Text(''),
-//                                                     Padding(
-//                                                       padding:
-//                                                           const EdgeInsets.only(
-//                                                               right: 20.0),
-//                                                       child: ElevatedButton(
-//                                                           style: const ButtonStyle(
-//                                                               backgroundColor:
-//                                                                   MaterialStatePropertyAll<
-//                                                                           Color>(
-//                                                                       Colors
-//                                                                           .black)),
-//                                                           onPressed: () async{
-//                                                             Navigator.of(
-//                                                                     context)
-//                                                                 .push(MaterialPageRoute(
-//                                                                     builder: (context) =>
-//                                                                         const SmallMap()));
-//                                                             _currentLocation();
-//                                                           },
-//                                                           child: const Text(
-//                                                               'Visit')),
-//                                                     ),
-//                                                   ],
-//                                                 ),
-//                                               ],
-//                                             );
-//                                           }),
-//                                     ),
-//                                   ],
-//                                 ),
-//                               ),
-//                               Container(
-//                                 height: 10.0,
-//                                 color: Colors.white,
-//                               ),
-//                               Row(
-//                                 mainAxisAlignment:
-//                                     MainAxisAlignment.spaceAround,
-//                                 children: [
-//                                   ElevatedButton(
-//                                       onPressed: () {},
-//                                       style: const ButtonStyle(
-//                                           backgroundColor:
-//                                               MaterialStatePropertyAll<Color>(
-//                                                   Colors.black)),
-//                                       child: cancelButton),
-//                                   ElevatedButton(
-//                                       onPressed: () {
-//                                       },
-//                                       style: const ButtonStyle(
-//                                           backgroundColor:
-//                                               MaterialStatePropertyAll<Color>(
-//                                                   Colors.black)),
-//                                       child: continueButton),
-//                                 ],
-//                               ),
-//                             ],
-//                           ),
-//                         ),
-//                       );
-//                       showDialog(
-//                         context: context,
-//                         builder: (BuildContext context) {
-//                           return alert;
-//                         },
-//                       );
-//                     }
-//                     showAlertDialog(context);
-//                   },
-//                   child: Container(
-//                     color: Colors.black,
-//                     child: ListTile(
-//                       title: Text('${data![index]['position']}',style: const TextStyle(color: Colors.white)),
-//                       subtitle: Text('${data![index]['company']}',style: const TextStyle(color: Colors.white)),
-//                       leading: const Icon(Icons.work,color: Colors.white),
-//                      ),
-//                   ));
-//             }));
-//   }
-// }
-
 // ignore_for_file: avoid_print, library_private_types_in_public_api, unused_field
 
 import 'dart:collection';
@@ -337,7 +92,7 @@ class _RecyclerViewDataState extends State<RecyclerViewData> {
             Container(
                 width: double.infinity,
                 height: 40.0,
-                color: Colors.black,
+                color: Colors.blue,
                 child: const Center(
                     child: Text(
                       "Selected Date is : 01/02/23",
@@ -397,7 +152,7 @@ class _RecyclerViewDataState extends State<RecyclerViewData> {
                                         style: const ButtonStyle(
                                             backgroundColor:
                                             MaterialStatePropertyAll<Color>(
-                                                Colors.black)),
+                                                Colors.blue)),
                                         onPressed: () async {
                                           Navigator.of(context).push(
                                               MaterialPageRoute(
@@ -426,13 +181,13 @@ class _RecyclerViewDataState extends State<RecyclerViewData> {
                     onPressed: () {},
                     style: const ButtonStyle(
                         backgroundColor:
-                        MaterialStatePropertyAll<Color>(Colors.black)),
+                        MaterialStatePropertyAll<Color>(Colors.blue)),
                     child: cancelButton),
                 ElevatedButton(
                     onPressed: () {},
                     style: const ButtonStyle(
                         backgroundColor:
-                        MaterialStatePropertyAll<Color>(Colors.black)),
+                        MaterialStatePropertyAll<Color>(Colors.blue)),
                     child: continueButton),
               ],
             ),

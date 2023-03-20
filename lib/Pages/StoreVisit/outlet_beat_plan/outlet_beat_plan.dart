@@ -17,7 +17,7 @@ class _OutletBeatPlanState extends State<OutletBeatPlan> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
         title: const Text('Beat Plan By Outlet'),
       ),
       drawer: const BuildNavBar(),

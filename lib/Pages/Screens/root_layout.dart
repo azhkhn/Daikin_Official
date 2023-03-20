@@ -62,7 +62,7 @@ class SetupFlowState extends State<SetupFlow> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
         centerTitle: true,
         title: Text(gettitlevalue),
       ),
@@ -112,7 +112,7 @@ class SetupFlowState extends State<SetupFlow> {
                 children: [
                   const Expanded(
                     child: Card(
-                      color: Colors.black,
+                      color: Colors.blue,
                       elevation: 6.0,
                       child: ButtonAttendence(),
                     ),
@@ -120,7 +120,7 @@ class SetupFlowState extends State<SetupFlow> {
                   const SizedBox(width: 5.0),
                   Expanded(
                     child: Card(
-                        color: Colors.black,
+                        color: Colors.blue,
                         elevation: 6.0,
                         child: TextButton(
                           onPressed: () {
@@ -154,7 +154,7 @@ class SetupFlowState extends State<SetupFlow> {
                 children: [
                   Expanded(
                     child: Card(
-                      color: Colors.black,
+                      color: Colors.blue,
                       elevation: 6.0,
                       child: TextButton(
                           onPressed: () {
@@ -181,7 +181,7 @@ class SetupFlowState extends State<SetupFlow> {
                   const SizedBox(width: 5.0),
                   const Expanded(
                     child: Card(
-                      color: Colors.black,
+                      color: Colors.blue,
                       elevation: 6.0,
                       child: ButtonLogout(),
                     ),
@@ -196,7 +196,7 @@ class SetupFlowState extends State<SetupFlow> {
                       children: [
                         const Expanded(
                           child: Card(
-                            color: Colors.black,
+                            color: Colors.blue,
                             elevation: 6.0,
                             child: StoreVisit(),
                           ),
@@ -244,7 +244,7 @@ class SetupFlowState extends State<SetupFlow> {
                 ElevatedButton(
                   style: const ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll<Color>(Colors.black)),
+                          MaterialStatePropertyAll<Color>(Colors.blue)),
                   onPressed: () {},
                   child: FutureBuilder<PackageInfo>(
                     future: PackageInfo.fromPlatform(),

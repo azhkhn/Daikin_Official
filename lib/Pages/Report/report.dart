@@ -12,7 +12,7 @@ class ReportPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
         title: const Center(child: Text('Report',style: TextStyle(color: Colors.white),)),
       ),
       body: const Page3(),

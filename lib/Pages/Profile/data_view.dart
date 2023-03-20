@@ -1,4 +1,5 @@
 import 'package:daikin/Pages/Attendence/attendence.dart';
+import 'package:daikin/Pages/Profile/webview_page.dart';
 import 'package:daikin/Widgets/outlet_recyclerview.dart';
 import 'package:daikin/Widgets/recycler_view.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,9 @@ class DataView extends StatelessWidget {
   const DataView({
     Key? key,
   }) : super(key: key);
+   _handleURLButtonPress(BuildContext context, String url, String title) {
+     Get.to(()=>WebViewPage(url, title));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -234,11 +238,11 @@ class DataView extends StatelessWidget {
                         Expanded(
                           child: Card(
                             margin: const EdgeInsets.all(0),
-                            color: Colors.black,
+                            color: Colors.blue,
                             elevation: 6,
                             child: TextButton(
                               onPressed: () {
-                                Get.to(const RecyclerViewData());
+                                Get.to(()=>const RecyclerViewData());
                               },
                               child: Container(
                                 padding: EdgeInsets.zero,
@@ -263,11 +267,11 @@ class DataView extends StatelessWidget {
                         Expanded(
                           child: Card(
                             margin: const EdgeInsets.all(0),
-                            color: Colors.black,
+                            color: Colors.blue,
                             elevation: 6,
                             child: TextButton(
                               onPressed: () {
-                                Get.to(const OutLetRecyclerView());
+                                Get.to(()=>const OutLetRecyclerView());
                               },
                               child: Container(
                                 padding: EdgeInsets.zero,
@@ -335,10 +339,8 @@ class DataView extends StatelessWidget {
                                       const TextSpan(text: "Designation"),
                                       const TextSpan(text: "     "),
                                       TextSpan(
-                                        text:
-                                        dashboardglobaldata
-                                                .first.designation
-                                        ,
+                                        text: dashboardglobaldata
+                                            .first.designation,
                                         style: const TextStyle(fontSize: 15),
                                       )
                                     ],
@@ -411,9 +413,7 @@ class DataView extends StatelessWidget {
                                       const TextSpan(text: "Dealer Id"),
                                       const TextSpan(text: "     "),
                                       TextSpan(
-                                        text: loginglobaldata
-                                                      .first.dealerId
-                                        ,
+                                        text: loginglobaldata.first.dealerId,
                                         style: const TextStyle(fontSize: 15),
                                       )
                                     ],
@@ -432,8 +432,7 @@ class DataView extends StatelessWidget {
                                       const TextSpan(text: "     "),
                                       TextSpan(
                                         text: dashboardglobaldata
-                                                      .first.dealername
-                                        ,
+                                            .first.dealername,
                                         style: const TextStyle(fontSize: 15),
                                       )
                                     ],
@@ -452,8 +451,7 @@ class DataView extends StatelessWidget {
                                       const TextSpan(text: "     "),
                                       TextSpan(
                                         text: dashboardglobaldata
-                                                      .first.dealeraddress
-                                        ,
+                                            .first.dealeraddress,
                                         style: const TextStyle(fontSize: 15),
                                       )
                                     ],
@@ -510,11 +508,11 @@ class DataView extends StatelessWidget {
                             Expanded(
                               child: Card(
                                 margin: const EdgeInsets.all(0),
-                                color: Colors.black,
+                                color: Colors.blue,
                                 elevation: 6,
                                 child: TextButton(
                                   onPressed: () {
-                                    Get.to(const AttendencePage());
+                                    Get.to(()=>const AttendencePage());
                                   },
                                   child: Container(
                                     padding: EdgeInsets.zero,
@@ -552,15 +550,14 @@ class DataView extends StatelessWidget {
                             Expanded(
                               child: Card(
                                 margin: const EdgeInsets.all(0),
-                                color: Colors.black,
+                                color: Colors.blue,
                                 elevation: 6,
                                 child: TextButton(
                                   onPressed: () async {
-                                    String url =
-                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                    await launchUrl(
-                                      Uri.parse(url),
-                                    );
+                                    _handleURLButtonPress(
+                                        context,
+                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                        "Sales Punch");
                                   },
                                   child: Container(
                                     padding: EdgeInsets.zero,
@@ -605,15 +602,14 @@ class DataView extends StatelessWidget {
                             Expanded(
                               child: Card(
                                 margin: const EdgeInsets.all(0),
-                                color: Colors.black,
+                                color: Colors.blue,
                                 elevation: 6,
                                 child: TextButton(
                                   onPressed: () async {
-                                    String url =
-                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                    await launchUrl(
-                                      Uri.parse(url),
-                                    );
+                                    _handleURLButtonPress(
+                                        context,
+                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                        "Attendance Summary");
                                   },
                                   child: Container(
                                     padding: EdgeInsets.zero,
@@ -645,15 +641,14 @@ class DataView extends StatelessWidget {
                             Expanded(
                               child: Card(
                                 margin: const EdgeInsets.all(0),
-                                color: Colors.black,
+                                color: Colors.blue,
                                 elevation: 6,
                                 child: TextButton(
                                   onPressed: () async {
-                                    String url =
-                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                    await launchUrl(
-                                      Uri.parse(url),
-                                    );
+                                        _handleURLButtonPress(
+                                            context,
+                                            'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                            "My Sales Summary");
                                   },
                                   child: Container(
                                     padding: EdgeInsets.zero,
@@ -692,15 +687,14 @@ class DataView extends StatelessWidget {
                             Expanded(
                               child: Card(
                                 margin: const EdgeInsets.all(0),
-                                color: Colors.black,
+                                color: Colors.blue,
                                 elevation: 6,
                                 child: TextButton(
                                   onPressed: () async {
-                                    String url =
-                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_targetachievement.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                    await launchUrl(
-                                      Uri.parse(url),
-                                    );
+                                    _handleURLButtonPress(
+                                        context,
+                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_targetachievement.action?userid=${loginglobaldata.first.loginId}&preflag=Y',
+                                        "Target Vs Achievement");
                                   },
                                   child: Container(
                                     padding: EdgeInsets.zero,
@@ -717,7 +711,7 @@ class DataView extends StatelessWidget {
                                               fontSize: 20.0),
                                         ),
                                         Text(
-                                          'VS Achievement',
+                                          'Vs Achievement',
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20.0),
@@ -817,11 +811,11 @@ class DataView extends StatelessWidget {
                                 Expanded(
                                   child: Card(
                                     margin: const EdgeInsets.all(0),
-                                    color: Colors.black,
+                                    color: Colors.blue,
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () {
-                                        Get.to(const AttendencePage());
+                                        Get.to(()=>const AttendencePage());
                                       },
                                       child: Container(
                                         padding: EdgeInsets.zero,
@@ -859,11 +853,11 @@ class DataView extends StatelessWidget {
                                 Expanded(
                                   child: Card(
                                     margin: const EdgeInsets.all(0),
-                                    color: Colors.black,
+                                    color: Colors.blue,
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () {
-                                        Get.to(()=>const RecyclerViewData());
+                                        Get.to(() => const RecyclerViewData());
                                       },
                                       child: Container(
                                         padding: EdgeInsets.zero,
@@ -908,7 +902,7 @@ class DataView extends StatelessWidget {
                                 Expanded(
                                   child: Card(
                                     margin: const EdgeInsets.all(0),
-                                    color: Colors.black,
+                                    color: Colors.blue,
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () async {
@@ -948,15 +942,11 @@ class DataView extends StatelessWidget {
                                 Expanded(
                                   child: Card(
                                     margin: const EdgeInsets.all(0),
-                                    color: Colors.black,
+                                    color: Colors.blue,
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () async {
-                                        String url =
-                                            'https://web.multiplier.co.in/dkffts/dkfftsapp_teamattendanceData.action?userid=${loginglobaldata.first.loginId}';
-                                        await launchUrl(
-                                          Uri.parse(url),
-                                        );
+                                        _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_teamattendanceData.action?userid=${loginglobaldata.first.loginId}', "Team Attendance");
                                       },
                                       child: Container(
                                         padding: EdgeInsets.zero,
@@ -995,15 +985,11 @@ class DataView extends StatelessWidget {
                                 Expanded(
                                   child: Card(
                                     margin: const EdgeInsets.all(0),
-                                    color: Colors.black,
+                                    color: Colors.blue,
                                     elevation: 6,
                                     child: TextButton(
                                       onPressed: () async {
-                                        String url =
-                                            'https://web.multiplier.co.in/dkffts/dkfftsapp_teamsalesData.action?userid=${loginglobaldata.first.loginId}';
-                                        await launchUrl(
-                                          Uri.parse(url),
-                                        );
+                                        _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_teamsalesData.action?userid=${loginglobaldata.first.loginId}', "Team Sales Summary");
                                       },
                                       child: Container(
                                         padding: EdgeInsets.zero,
@@ -1121,11 +1107,11 @@ class DataView extends StatelessWidget {
                                     Expanded(
                                       child: Card(
                                         margin: const EdgeInsets.all(0),
-                                        color: Colors.black,
+                                        color: Colors.blue,
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () {
-                                            Get.to(const AttendencePage());
+                                            Get.to(()=>const AttendencePage());
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1163,15 +1149,11 @@ class DataView extends StatelessWidget {
                                     Expanded(
                                       child: Card(
                                         margin: const EdgeInsets.all(0),
-                                        color: Colors.black,
+                                        color: Colors.blue,
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () async {
-                                            String url =
-                                                'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                            await launchUrl(
-                                              Uri.parse(url),
-                                            );
+                                            _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Attendance Summary");
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1210,15 +1192,11 @@ class DataView extends StatelessWidget {
                                     Expanded(
                                       child: Card(
                                         margin: const EdgeInsets.all(0),
-                                        color: Colors.black,
+                                        color: Colors.blue,
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () async {
-                                            String url =
-                                                'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                            await launchUrl(
-                                              Uri.parse(url),
-                                            );
+                                            _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Team Attendance Summary");
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1250,15 +1228,11 @@ class DataView extends StatelessWidget {
                                     Expanded(
                                       child: Card(
                                         margin: const EdgeInsets.all(0),
-                                        color: Colors.black,
+                                        color: Colors.blue,
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () async {
-                                            String url =
-                                                'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                            await launchUrl(
-                                              Uri.parse(url),
-                                            );
+                                            _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Team Sales Summary");
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1297,15 +1271,11 @@ class DataView extends StatelessWidget {
                                     Expanded(
                                       child: Card(
                                         margin: const EdgeInsets.all(0),
-                                        color: Colors.black,
+                                        color: Colors.blue,
                                         elevation: 6,
                                         child: TextButton(
                                           onPressed: () async {
-                                            String url =
-                                                'https://web.multiplier.co.in/dkffts/dkfftsapp_targetachievement.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                            await launchUrl(
-                                              Uri.parse(url),
-                                            );
+                                            _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_targetachievement.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Target Vs Achievement");
                                           },
                                           child: Container(
                                             padding: EdgeInsets.zero,
@@ -1322,7 +1292,7 @@ class DataView extends StatelessWidget {
                                                       fontSize: 20.0),
                                                 ),
                                                 Text(
-                                                  'VS Achievement',
+                                                  'Vs Achievement',
                                                   style: TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 20.0),
@@ -1424,11 +1394,11 @@ class DataView extends StatelessWidget {
                                         Expanded(
                                           child: Card(
                                             margin: const EdgeInsets.all(0),
-                                            color: Colors.black,
+                                            color: Colors.blue,
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () {
-                                                Get.to(const AttendencePage());
+                                                Get.to(()=>const AttendencePage());
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1466,15 +1436,11 @@ class DataView extends StatelessWidget {
                                         Expanded(
                                           child: Card(
                                             margin: const EdgeInsets.all(0),
-                                            color: Colors.black,
+                                            color: Colors.blue,
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () async {
-                                                String url =
-                                                    'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                                await launchUrl(
-                                                  Uri.parse(url),
-                                                );
+                                                _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Sales Form");
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1519,15 +1485,11 @@ class DataView extends StatelessWidget {
                                         Expanded(
                                           child: Card(
                                             margin: const EdgeInsets.all(0),
-                                            color: Colors.black,
+                                            color: Colors.blue,
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () async {
-                                                String url =
-                                                    'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                                await launchUrl(
-                                                  Uri.parse(url),
-                                                );
+                                                _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Attendance Summary");
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1559,15 +1521,11 @@ class DataView extends StatelessWidget {
                                         Expanded(
                                           child: Card(
                                             margin: const EdgeInsets.all(0),
-                                            color: Colors.black,
+                                            color: Colors.blue,
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () async {
-                                                String url =
-                                                    'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                                await launchUrl(
-                                                  Uri.parse(url),
-                                                );
+                                                _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Sales Summary");
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1606,15 +1564,11 @@ class DataView extends StatelessWidget {
                                         Expanded(
                                           child: Card(
                                             margin: const EdgeInsets.all(0),
-                                            color: Colors.black,
+                                            color: Colors.blue,
                                             elevation: 6,
                                             child: TextButton(
                                               onPressed: () async {
-                                                String url =
-                                                    'https://web.multiplier.co.in/dkffts/dkfftsapp_targetachievement.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                                await launchUrl(
-                                                  Uri.parse(url),
-                                                );
+                                                _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_targetachievement.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Target Vs Achievement");
                                               },
                                               child: Container(
                                                 padding: EdgeInsets.zero,
@@ -1735,11 +1689,12 @@ class DataView extends StatelessWidget {
                                             Expanded(
                                               child: Card(
                                                 margin: const EdgeInsets.all(0),
-                                                color: Colors.black,
+                                                color: Colors.blue,
                                                 elevation: 6,
                                                 child: TextButton(
                                                   onPressed: () {
-                                                    Get.to(const AttendencePage());
+                                                    Get.to(()=>
+                                                        const AttendencePage());
                                                   },
                                                   child: Container(
                                                     padding: EdgeInsets.zero,
@@ -1780,15 +1735,11 @@ class DataView extends StatelessWidget {
                                             Expanded(
                                               child: Card(
                                                 margin: const EdgeInsets.all(0),
-                                                color: Colors.black,
+                                                color: Colors.blue,
                                                 elevation: 6,
                                                 child: TextButton(
                                                   onPressed: () async {
-                                                    String url =
-                                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                                    await launchUrl(
-                                                      Uri.parse(url),
-                                                    );
+                                                    _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_sales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Attendance Summary");
                                                   },
                                                   child: Container(
                                                     padding: EdgeInsets.zero,
@@ -1829,15 +1780,11 @@ class DataView extends StatelessWidget {
                                             Expanded(
                                               child: Card(
                                                 margin: const EdgeInsets.all(0),
-                                                color: Colors.black,
+                                                color: Colors.blue,
                                                 elevation: 6,
                                                 child: TextButton(
                                                   onPressed: () async {
-                                                    String url =
-                                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                                    await launchUrl(
-                                                      Uri.parse(url),
-                                                    );
+                                                    _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_attendancesummary.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Team Attendance Summary");
                                                   },
                                                   child: Container(
                                                     padding: EdgeInsets.zero,
@@ -1871,15 +1818,11 @@ class DataView extends StatelessWidget {
                                             Expanded(
                                               child: Card(
                                                 margin: const EdgeInsets.all(0),
-                                                color: Colors.black,
+                                                color: Colors.blue,
                                                 elevation: 6,
                                                 child: TextButton(
                                                   onPressed: () async {
-                                                    String url =
-                                                        'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y';
-                                                    await launchUrl(
-                                                      Uri.parse(url),
-                                                    );
+                                                    _handleURLButtonPress(context, 'https://web.multiplier.co.in/dkffts/dkfftsapp_viewsales.action?userid=${loginglobaldata.first.loginId}&preflag=Y', "Team Sales Summary");
                                                   },
                                                   child: Container(
                                                     padding: EdgeInsets.zero,

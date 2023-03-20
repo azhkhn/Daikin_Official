@@ -180,7 +180,7 @@ class _SmallMapState extends State<SmallMap> {
                                 style: const ButtonStyle(
                                     backgroundColor:
                                         MaterialStatePropertyAll<Color>(
-                                            Colors.black)),
+                                            Colors.blue)),
                                 child: const Text(
                                   'CHECK IN',
                                   style: TextStyle(color: Colors.white),

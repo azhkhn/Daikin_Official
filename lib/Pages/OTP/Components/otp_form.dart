@@ -238,7 +238,7 @@ class _OtpFormState extends State<OtpForm> {
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 child: const CustomText(
                         text: "Continue",
-                        color: Colors.black,
+                        color: Colors.white,
                         size: 15,
                         weight: FontWeight.w400,
                       )

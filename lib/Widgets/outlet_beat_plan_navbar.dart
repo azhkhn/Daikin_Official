@@ -23,7 +23,7 @@ class _OutLetBeatPlanNavBarState extends State<OutLetBeatPlanNavBar> {
   Widget build(BuildContext context) {
     return SizedBox(
       child: BottomNavigationBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
         items: [
           BottomNavigationBarItem(
               icon: TextField(

@@ -8,7 +8,7 @@ class AuthProxy extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
             decoration: const BoxDecoration(
-              color: Colors.black
+              color: Colors.blue
             ),
             child: const AuthenticationPage(reset: false,));
   }
