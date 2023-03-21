@@ -57,6 +57,8 @@ dependencies:
   package_info: ^2.0.2
   table_calendar: ^3.0.9
   get: ^4.6.5
+  google_fonts: ^4.0.3
+  flutter_easyloading: ^3.0.5
 
 dev_dependencies:
   flutter_test:

@@ -53,7 +53,7 @@ class TrainTransition extends StatelessWidget {
                             if (snapshot.hasData) {
                               if (data!['status'] == 'N') {
                                 return FutureBuilder(
-                                    future: _startnav2(context, 0),
+                                    future: _startnav2(context, 1),
                                     builder: (BuildContext context,
                                         AsyncSnapshot snapshot2) {
                                       switch (snapshot2.connectionState) {
@@ -69,7 +69,7 @@ class TrainTransition extends StatelessWidget {
                               }
                               if (data['status'] == 'Y') {
                                 return FutureBuilder(
-                                    future: _startnav2(context, 0),
+                                    future: _startnav2(context, 1),
                                     builder: (BuildContext context,
                                         AsyncSnapshot snapshot2) {
                                       switch (snapshot2.connectionState) {

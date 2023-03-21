@@ -83,12 +83,16 @@ class SetupFlowState extends State<SetupFlow> {
           children: [
             Container(
               color: Colors.white,
-              height: 145.0,
+              height: 205.0,
               child: DrawerHeader(
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      const Image(image: AssetImage('assets/four_digit_new.png'),height: 25,),
+                      const SizedBox(
+                        height: 30.0,
+                      ),
                       Text('USER ID: ${loginglobaldata.first.loginId}',
                           style: const TextStyle(color: Colors.black)),
                       const SizedBox(
@@ -235,7 +239,7 @@ class SetupFlowState extends State<SetupFlow> {
                     ),
                   ),
             const SizedBox(
-              height: 160.0,
+              height: 120.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

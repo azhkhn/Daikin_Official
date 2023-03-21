@@ -5,7 +5,6 @@ import '../../model/APISchemas/login_schema.dart';
 import '../Services/API/login.dart';
 import '../Widgets/auth_fail.dart';
 import '../Widgets/logging_in_center.dart';
-import '../Widgets/server_error.dart';
 import 'DatabaseCalls/setlogindata.dart';
 
 class LoginTransition extends StatelessWidget {
@@ -48,7 +47,7 @@ class LoginTransition extends StatelessWidget {
               future: _startWaiting(context),
               builder: (BuildContext context,AsyncSnapshot snapshot2) {
                 return const Center(
-                  child: ServerError(),
+                  child: AuthError(),
                 );
             });
           }

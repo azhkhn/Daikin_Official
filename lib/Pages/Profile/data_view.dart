@@ -58,7 +58,6 @@ class DataView extends StatelessWidget {
                                 style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 18,
-                                  fontWeight: FontWeight.bold,
                                 ),
                                 children: <TextSpan>[
                                   const TextSpan(text: "Designation"),
@@ -76,7 +75,6 @@ class DataView extends StatelessWidget {
                                 style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 18,
-                                  fontWeight: FontWeight.bold,
                                 ),
                                 children: <TextSpan>[
                                   const TextSpan(text: "EmpId"),
@@ -94,7 +92,6 @@ class DataView extends StatelessWidget {
                                 style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 18,
-                                  fontWeight: FontWeight.bold,
                                 ),
                                 children: <TextSpan>[
                                   const TextSpan(text: "Branch Name"),
@@ -132,7 +129,6 @@ class DataView extends StatelessWidget {
                                 style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 18,
-                                  fontWeight: FontWeight.bold,
                                 ),
                                 children: <TextSpan>[
                                   const TextSpan(text: "Dealer Id"),
@@ -150,7 +146,6 @@ class DataView extends StatelessWidget {
                                 style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 18,
-                                  fontWeight: FontWeight.bold,
                                 ),
                                 children: <TextSpan>[
                                   const TextSpan(text: "Dealer Name"),
@@ -168,7 +163,6 @@ class DataView extends StatelessWidget {
                                 style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 18,
-                                  fontWeight: FontWeight.bold,
                                 ),
                                 children: <TextSpan>[
                                   const TextSpan(text: "Dealer Address"),
@@ -199,7 +193,6 @@ class DataView extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                            height: 80.0,
                             width: double.infinity,
                             padding: const EdgeInsets.all(6.0),
                             child: Padding(
@@ -215,9 +208,6 @@ class DataView extends StatelessWidget {
                                           fontSize: 18.0,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    TextSpan(
-                                        text:
-                                            '\nWelcome back in Daikin Force Field Management System\nApplication'),
                                   ],
                                 ),
                               ),
@@ -332,7 +322,6 @@ class DataView extends StatelessWidget {
                                     style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,
-                                      fontWeight: FontWeight.bold,
                                     ),
                                     children: <TextSpan>[
                                       const TextSpan(text: "Designation"),
@@ -351,7 +340,6 @@ class DataView extends StatelessWidget {
                                     style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,
-                                      fontWeight: FontWeight.bold,
                                     ),
                                     children: <TextSpan>[
                                       const TextSpan(text: "EmpId"),
@@ -369,7 +357,6 @@ class DataView extends StatelessWidget {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,
-                                      fontWeight: FontWeight.bold,
                                     ),
                                     children: <TextSpan>[
                                       TextSpan(text: "Branch Name"),
@@ -406,7 +393,6 @@ class DataView extends StatelessWidget {
                                     style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,
-                                      fontWeight: FontWeight.bold,
                                     ),
                                     children: <TextSpan>[
                                       const TextSpan(text: "Dealer Id"),
@@ -424,7 +410,6 @@ class DataView extends StatelessWidget {
                                     style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,
-                                      fontWeight: FontWeight.bold,
                                     ),
                                     children: <TextSpan>[
                                       const TextSpan(text: "Dealer Name"),
@@ -443,7 +428,6 @@ class DataView extends StatelessWidget {
                                     style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 18,
-                                      fontWeight: FontWeight.bold,
                                     ),
                                     children: <TextSpan>[
                                       const TextSpan(text: "Dealer Address"),
@@ -472,7 +456,6 @@ class DataView extends StatelessWidget {
                           child: Column(
                             children: [
                               Container(
-                                height: 60.0,
                                 width: double.infinity,
                                 padding: const EdgeInsets.all(6.0),
                                 child: Padding(
@@ -485,8 +468,8 @@ class DataView extends StatelessWidget {
                                         TextSpan(
                                           text: 'Notice Boards',
                                           style: TextStyle(
-                                              fontSize: 18.0,
-                                              fontWeight: FontWeight.bold),
+                                            fontSize: 18.0,
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -778,7 +761,6 @@ class DataView extends StatelessWidget {
                                         style: const TextStyle(
                                           color: Colors.black,
                                           fontSize: 18,
-                                          fontWeight: FontWeight.bold,
                                         ),
                                         children: <TextSpan>[
                                           const TextSpan(text: "HELLO!"),
@@ -797,7 +779,6 @@ class DataView extends StatelessWidget {
                                         style: const TextStyle(
                                           color: Colors.black,
                                           fontSize: 18,
-                                          fontWeight: FontWeight.bold,
                                         ),
                                         children: <TextSpan>[
                                           const TextSpan(text: "Designation"),
@@ -837,7 +818,6 @@ class DataView extends StatelessWidget {
                                         style: const TextStyle(
                                           color: Colors.black,
                                           fontSize: 18,
-                                          fontWeight: FontWeight.bold,
                                         ),
                                         children: <TextSpan>[
                                           const TextSpan(text: "EmpId"),
@@ -856,7 +836,6 @@ class DataView extends StatelessWidget {
                                         style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 18,
-                                          fontWeight: FontWeight.bold,
                                         ),
                                         children: <TextSpan>[
                                           TextSpan(text: "Branch Name"),
@@ -1182,7 +1161,8 @@ class DataView extends StatelessWidget {
                                   child: Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         RichText(
                                           text: TextSpan(
@@ -1195,9 +1175,10 @@ class DataView extends StatelessWidget {
                                               const TextSpan(text: "HELLO!"),
                                               const TextSpan(text: "   "),
                                               TextSpan(
-                                                text: loginglobaldata.first.empName,
-                                                style:
-                                                const TextStyle(fontSize: 18),
+                                                text: loginglobaldata
+                                                    .first.empName,
+                                                style: const TextStyle(
+                                                    fontSize: 18),
                                               )
                                             ],
                                           ),
@@ -1208,36 +1189,39 @@ class DataView extends StatelessWidget {
                                             style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 18,
-                                              fontWeight: FontWeight.bold,
                                             ),
                                             children: <TextSpan>[
-                                              const TextSpan(text: "Designation"),
+                                              const TextSpan(
+                                                  text: "Designation"),
                                               const TextSpan(text: "     "),
                                               TextSpan(
-                                                text: loginglobaldata.first.appId ==
-                                                    "1"
+                                                text: loginglobaldata
+                                                            .first.appId ==
+                                                        "1"
                                                     ? "ISD"
-                                                    : loginglobaldata.first.appId ==
-                                                    "2"
-                                                    ? "TL"
                                                     : loginglobaldata
-                                                    .first.appId ==
-                                                    "3"
-                                                    ? "RSO"
-                                                    : loginglobaldata.first
-                                                    .appId ==
-                                                    "4"
-                                                    ? "DSP ISD"
-                                                    : loginglobaldata
-                                                    .first
-                                                    .appId ==
-                                                    "5"
-                                                    ? "MIS"
-                                                    : dashboardglobaldata
-                                                    .first
-                                                    .designation,
-                                                style:
-                                                const TextStyle(fontSize: 15),
+                                                                .first.appId ==
+                                                            "2"
+                                                        ? "TL"
+                                                        : loginglobaldata.first
+                                                                    .appId ==
+                                                                "3"
+                                                            ? "RSO"
+                                                            : loginglobaldata
+                                                                        .first
+                                                                        .appId ==
+                                                                    "4"
+                                                                ? "DSP ISD"
+                                                                : loginglobaldata
+                                                                            .first
+                                                                            .appId ==
+                                                                        "5"
+                                                                    ? "MIS"
+                                                                    : dashboardglobaldata
+                                                                        .first
+                                                                        .designation,
+                                                style: const TextStyle(
+                                                    fontSize: 15),
                                               )
                                             ],
                                           ),
@@ -1248,15 +1232,15 @@ class DataView extends StatelessWidget {
                                             style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 18,
-                                              fontWeight: FontWeight.bold,
                                             ),
                                             children: <TextSpan>[
                                               const TextSpan(text: "EmpId"),
                                               const TextSpan(text: "     "),
                                               TextSpan(
-                                                text: loginglobaldata.first.loginId,
-                                                style:
-                                                const TextStyle(fontSize: 15),
+                                                text: loginglobaldata
+                                                    .first.loginId,
+                                                style: const TextStyle(
+                                                    fontSize: 15),
                                               )
                                             ],
                                           ),
@@ -1267,7 +1251,6 @@ class DataView extends StatelessWidget {
                                             style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 18,
-                                              fontWeight: FontWeight.bold,
                                             ),
                                             children: <TextSpan>[
                                               TextSpan(text: "Branch Name"),
@@ -1313,7 +1296,8 @@ class DataView extends StatelessWidget {
                                                       fontSize: 18.0,
                                                       fontWeight:
                                                           FontWeight.bold),
-                                                ),],
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
@@ -1591,7 +1575,8 @@ class DataView extends StatelessWidget {
                                       child: Padding(
                                         padding: const EdgeInsets.all(12.0),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             RichText(
                                               text: TextSpan(
@@ -1601,12 +1586,14 @@ class DataView extends StatelessWidget {
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                                 children: <TextSpan>[
-                                                  const TextSpan(text: "HELLO!"),
+                                                  const TextSpan(
+                                                      text: "HELLO!"),
                                                   const TextSpan(text: "   "),
                                                   TextSpan(
-                                                    text: loginglobaldata.first.empName,
-                                                    style:
-                                                    const TextStyle(fontSize: 18),
+                                                    text: loginglobaldata
+                                                        .first.empName,
+                                                    style: const TextStyle(
+                                                        fontSize: 18),
                                                   )
                                                 ],
                                               ),
@@ -1617,36 +1604,38 @@ class DataView extends StatelessWidget {
                                                 style: const TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 18,
-                                                  fontWeight: FontWeight.bold,
                                                 ),
                                                 children: <TextSpan>[
-                                                  const TextSpan(text: "Designation"),
+                                                  const TextSpan(
+                                                      text: "Designation"),
                                                   const TextSpan(text: "     "),
                                                   TextSpan(
-                                                    text: loginglobaldata.first.appId ==
-                                                        "1"
+                                                    text: loginglobaldata
+                                                                .first.appId ==
+                                                            "1"
                                                         ? "ISD"
-                                                        : loginglobaldata.first.appId ==
-                                                        "2"
-                                                        ? "TL"
-                                                        : loginglobaldata
-                                                        .first.appId ==
-                                                        "3"
-                                                        ? "RSO"
                                                         : loginglobaldata.first
-                                                        .appId ==
-                                                        "4"
-                                                        ? "DSP ISD"
-                                                        : loginglobaldata
-                                                        .first
-                                                        .appId ==
-                                                        "5"
-                                                        ? "MIS"
-                                                        : dashboardglobaldata
-                                                        .first
-                                                        .designation,
-                                                    style:
-                                                    const TextStyle(fontSize: 15),
+                                                                    .appId ==
+                                                                "2"
+                                                            ? "TL"
+                                                            : loginglobaldata
+                                                                        .first
+                                                                        .appId ==
+                                                                    "3"
+                                                                ? "RSO"
+                                                                : loginglobaldata
+                                                                            .first
+                                                                            .appId ==
+                                                                        "4"
+                                                                    ? "DSP ISD"
+                                                                    : loginglobaldata.first.appId ==
+                                                                            "5"
+                                                                        ? "MIS"
+                                                                        : dashboardglobaldata
+                                                                            .first
+                                                                            .designation,
+                                                    style: const TextStyle(
+                                                        fontSize: 15),
                                                   )
                                                 ],
                                               ),
@@ -1657,15 +1646,15 @@ class DataView extends StatelessWidget {
                                                 style: const TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 18,
-                                                  fontWeight: FontWeight.bold,
                                                 ),
                                                 children: <TextSpan>[
                                                   const TextSpan(text: "EmpId"),
                                                   const TextSpan(text: "     "),
                                                   TextSpan(
-                                                    text: loginglobaldata.first.loginId,
-                                                    style:
-                                                    const TextStyle(fontSize: 15),
+                                                    text: loginglobaldata
+                                                        .first.loginId,
+                                                    style: const TextStyle(
+                                                        fontSize: 15),
                                                   )
                                                 ],
                                               ),
@@ -1676,14 +1665,14 @@ class DataView extends StatelessWidget {
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 18,
-                                                  fontWeight: FontWeight.bold,
                                                 ),
                                                 children: <TextSpan>[
                                                   TextSpan(text: "Branch Name"),
                                                   TextSpan(text: "     "),
                                                   TextSpan(
                                                     text: "Delhi",
-                                                    style: TextStyle(fontSize: 15),
+                                                    style:
+                                                        TextStyle(fontSize: 15),
                                                   )
                                                 ],
                                               ),
@@ -1723,7 +1712,8 @@ class DataView extends StatelessWidget {
                                                           fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.bold),
-                                                    ),],
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
                                             ),
@@ -2007,22 +1997,27 @@ class DataView extends StatelessWidget {
                                           child: Padding(
                                             padding: const EdgeInsets.all(12.0),
                                             child: Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 RichText(
                                                   text: TextSpan(
                                                     style: const TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 18,
-                                                      fontWeight: FontWeight.bold,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                     ),
                                                     children: <TextSpan>[
-                                                      const TextSpan(text: "HELLO!"),
-                                                      const TextSpan(text: "   "),
+                                                      const TextSpan(
+                                                          text: "HELLO!"),
+                                                      const TextSpan(
+                                                          text: "   "),
                                                       TextSpan(
-                                                        text: loginglobaldata.first.empName,
-                                                        style:
-                                                        const TextStyle(fontSize: 18),
+                                                        text: loginglobaldata
+                                                            .first.empName,
+                                                        style: const TextStyle(
+                                                            fontSize: 18),
                                                       )
                                                     ],
                                                   ),
@@ -2033,36 +2028,37 @@ class DataView extends StatelessWidget {
                                                     style: const TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 18,
-                                                      fontWeight: FontWeight.bold,
                                                     ),
                                                     children: <TextSpan>[
-                                                      const TextSpan(text: "Designation"),
-                                                      const TextSpan(text: "     "),
+                                                      const TextSpan(
+                                                          text: "Designation"),
+                                                      const TextSpan(
+                                                          text: "     "),
                                                       TextSpan(
-                                                        text: loginglobaldata.first.appId ==
-                                                            "1"
+                                                        text: loginglobaldata
+                                                                    .first
+                                                                    .appId ==
+                                                                "1"
                                                             ? "ISD"
-                                                            : loginglobaldata.first.appId ==
-                                                            "2"
-                                                            ? "TL"
                                                             : loginglobaldata
-                                                            .first.appId ==
-                                                            "3"
-                                                            ? "RSO"
-                                                            : loginglobaldata.first
-                                                            .appId ==
-                                                            "4"
-                                                            ? "DSP ISD"
-                                                            : loginglobaldata
-                                                            .first
-                                                            .appId ==
-                                                            "5"
-                                                            ? "MIS"
-                                                            : dashboardglobaldata
-                                                            .first
-                                                            .designation,
-                                                        style:
-                                                        const TextStyle(fontSize: 15),
+                                                                        .first
+                                                                        .appId ==
+                                                                    "2"
+                                                                ? "TL"
+                                                                : loginglobaldata
+                                                                            .first
+                                                                            .appId ==
+                                                                        "3"
+                                                                    ? "RSO"
+                                                                    : loginglobaldata.first.appId ==
+                                                                            "4"
+                                                                        ? "DSP ISD"
+                                                                        : loginglobaldata.first.appId ==
+                                                                                "5"
+                                                                            ? "MIS"
+                                                                            : dashboardglobaldata.first.designation,
+                                                        style: const TextStyle(
+                                                            fontSize: 15),
                                                       )
                                                     ],
                                                   ),
@@ -2073,15 +2069,17 @@ class DataView extends StatelessWidget {
                                                     style: const TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 18,
-                                                      fontWeight: FontWeight.bold,
                                                     ),
                                                     children: <TextSpan>[
-                                                      const TextSpan(text: "EmpId"),
-                                                      const TextSpan(text: "     "),
+                                                      const TextSpan(
+                                                          text: "EmpId"),
+                                                      const TextSpan(
+                                                          text: "     "),
                                                       TextSpan(
-                                                        text: loginglobaldata.first.loginId,
-                                                        style:
-                                                        const TextStyle(fontSize: 15),
+                                                        text: loginglobaldata
+                                                            .first.loginId,
+                                                        style: const TextStyle(
+                                                            fontSize: 15),
                                                       )
                                                     ],
                                                   ),
@@ -2092,14 +2090,15 @@ class DataView extends StatelessWidget {
                                                     style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 18,
-                                                      fontWeight: FontWeight.bold,
                                                     ),
                                                     children: <TextSpan>[
-                                                      TextSpan(text: "Branch Name"),
+                                                      TextSpan(
+                                                          text: "Branch Name"),
                                                       TextSpan(text: "     "),
                                                       TextSpan(
                                                         text: "Delhi",
-                                                        style: TextStyle(fontSize: 15),
+                                                        style: TextStyle(
+                                                            fontSize: 15),
                                                       )
                                                     ],
                                                   ),
@@ -2141,7 +2140,8 @@ class DataView extends StatelessWidget {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold),
-                                                        ),],
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
                                                 ),

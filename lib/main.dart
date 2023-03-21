@@ -27,7 +27,8 @@ Future<void> main() async {
     const AppSystemManager(
       child: InternetConnectionState(
         child: StateWidget(
-          child: MyApp()
+          child: MyApp(
+          )
         ),
       ),
     ));

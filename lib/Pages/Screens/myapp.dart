@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../Routing/named_routes.dart';
 import '../../helpers/internet_handler.dart';
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: ThemeData(fontFamily: GoogleFonts.abel().fontFamily),
       debugShowCheckedModeBanner: false,
       initialRoute: launchRoute,
       routes: {
@@ -27,6 +30,7 @@ class MyApp extends StatelessWidget {
         privacyPageRoute: (settings) => const InternetConnectionState(child: PrivacyStatus()),
         covidPageRoute: (settings) => const InternetConnectionState(child: CovidScreen()),
       },
+      builder: EasyLoading.init(),
     );
   }
 }

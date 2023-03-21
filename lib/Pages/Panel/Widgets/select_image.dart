@@ -69,71 +69,73 @@ class _SelectImageState extends State<SelectImage> {
           ),
           Text(date),
           const SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              (tempnoteresult == 'Present' && mimg != null && mimg != " ")
-                  ? const MorningImage()
-                  : InkWell(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CircleAvatar(
-                            radius: 25.0,
-                            backgroundImage: imagefileIn == null
-                                ? const AssetImage("assets/profile.png")
-                                : FileImage(File(imagefileIn!.path))
-                                    as ImageProvider,
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            "In",
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                        ],
+          SizedBox(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                (tempnoteresult == 'Present' && mimg != null && mimg != " ")
+                    ? const MorningImage()
+                    : InkWell(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              radius: 25.0,
+                              backgroundImage: imagefileIn == null
+                                  ? const AssetImage("assets/profile.png")
+                                  : FileImage(File(imagefileIn!.path))
+                                      as ImageProvider,
+                            ),
+                            const SizedBox(height: 5),
+                            const Text(
+                              "In",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                          ],
+                        ),
+                        onTap: () {
+                            getimage(ImageSource.camera, "IN");
+                        },
                       ),
-                      onTap: () {
-                          getimage(ImageSource.camera, "IN");
-                      },
-                    ),
-              (tempnoteresult == 'Present' && eimg != null && eimg != " ")
-                  ? const EveningImage()
-                  : InkWell(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CircleAvatar(
-                            radius: 25.0,
-                            backgroundImage: imagefileOut == null
-                                ? const AssetImage("assets/profile.png")
-                                : FileImage(File(imagefileOut!.path))
-                                    as ImageProvider,
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            "Out",
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                        ],
+                (tempnoteresult == 'Present' && eimg != null && eimg != " ")
+                    ? const EveningImage()
+                    : InkWell(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              radius: 25.0,
+                              backgroundImage: imagefileOut == null
+                                  ? const AssetImage("assets/profile.png")
+                                  : FileImage(File(imagefileOut!.path))
+                                      as ImageProvider,
+                            ),
+                            const SizedBox(height: 5),
+                            const Text(
+                              "Out",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                          ],
+                        ),
+                        onTap: () {
+                          getimage(ImageSource.camera, "OUT");
+                        },
                       ),
-                      onTap: () {
-                        getimage(ImageSource.camera, "OUT");
-                      },
-                    ),
-            ],
+              ],
+            ),
           ),
           const SizedBox(height: 5),
           addresslocal != null
@@ -177,7 +179,7 @@ class _SelectImageState extends State<SelectImage> {
       if (image == null) {
         // ignore: avoid_print
         print("Bad Format");
-      } else {
+      } else{
         setState(() {
           if (value == 'IN') {
             imagefileIn = File(image.path);
